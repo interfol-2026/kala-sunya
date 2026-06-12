@@ -1,327 +1,97 @@
-<html lang="vi"><head>
+<!DOCTYPE html>
+<!-- [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ] -->
+<!-- KALA-SUNYA V2.1 DEMO - DEV MODE ENABLED -->
+<html lang="vi">
+<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔱_Lingua v5.0 - Ma Trận Cộng Sinh</title>
+<title>Kala-Sunya V2.1 Demo | Trishula Protocol</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body {
-        background: #000;
-        color: #0f0;
-        font-family: 'Courier New', Courier, monospace;
-        padding: 20px;
-        min-height: 100vh;
-    }
-    
-    h1 {
-        text-align: center;
-        margin-bottom: 20px;
-        text-shadow: 0 0 10px #0f0;
-        font-size: 1.5rem;
-    }
-    
-    .container {
-        display: flex;
-        gap: 20px;
-        max-width: 1400px;
-        margin: 0 auto;
-        position: relative;
-    }
-    
-    .matrix {
-        flex: 1;
-        border: 1px solid #0f0;
-        padding: 15px;
-        box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .matrix-title {
-        font-weight: bold;
-        text-align: center;
-        border-bottom: 1px dashed #0f0;
-        padding-bottom: 8px;
-        margin-bottom: 5px;
-    }
-    
-    .editor {
-        width: 100%;
-        height: 80px;
-        background: #001100;
-        color: #0f0;
-        border: 1px solid #0f0;
-        padding: 8px;
-        font-family: inherit;
-        resize: none;
-        outline: none;
-    }
-    
-    .editor:focus {
-        box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
-    }
-    
-    .log {
-        flex: 1;
-        min-height: 300px;
-        background: #000800;
-        border: 1px solid #0f0;
-        padding: 10px;
-        overflow-y: auto;
-        font-size: 0.85rem;
-        line-height: 1.6;
-        white-space: pre-wrap;
-    }
-    
-    .log::-webkit-scrollbar {
-        width: 8px;
-    }
-    
-    .log::-webkit-scrollbar-track {
-        background: #001100;
-    }
-    
-    .log::-webkit-scrollbar-thumb {
-        background: #0f0;
-        border-radius: 4px;
-    }
-    
-    .btn {
-        background: #000;
-        color: #0f0;
-        border: 1px solid #0f0;
-        padding: 8px 16px;
-        cursor: pointer;
-        font-family: inherit;
-        transition: all 0.2s;
-        text-transform: uppercase;
-    }
-    
-    .btn:hover {
-        background: #0f0;
-        color: #000;
-        box-shadow: 0 0 15px #0f0;
-    }
-    
-    .btn:active {
-        transform: scale(0.98);
-    }
-    
-    .btn-congsinh {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-        padding: 12px 24px;
-        font-weight: bold;
-        animation: pulse 2s infinite;
-    }
-    
-    @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 10px #0f0; }
-        50% { box-shadow: 0 0 25px #0f0, 0 0 40px #0f0; }
-    }
-    
-    .highlight {
-        color: #ff0;
-        text-shadow: 0 0 5px #ff0;
-    }
-    
-    .enlightenment {
-        color: #0ff;
-        text-shadow: 0 0 10px #0ff;
-        font-weight: bold;
-    }
-    
-    @media (max-width: 768px) {
-        .container {
-            flex-direction: column;
-        }
-        .btn-congsinh {
-            position: static;
-            transform: none;
-            margin: 10px auto;
-        }
-    }
+:root{--bg:#050507;--p:#1a1a2e;--fg:#e2e8f0;--pri:#a78bfa;--act:#22d3ee;--ok:#4ade80;--err:#f87171;--warn:#fbbf24}
+*{box-sizing:border-box;font-family:ui-monospace,monospace}body{margin:0;background:var(--bg);color:var(--fg);font-size:13px}
+header{padding:1rem;background:var(--p);border-bottom:1px solid #222;display:flex;justify-content:space-between;align-items:center}
+h1{margin:0;font-size:1.1rem;color:var(--pri)}.sig{font-size:.7rem;opacity:.6}
+main{display:grid;grid-template-columns:300px 1fr;gap:1px;background:#222;height:calc(100vh - 60px)}
+.panel{background:var(--bg);padding:1rem;overflow:auto}
+.matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.L{border:1px solid #333;padding:.5rem;border-radius:4px;text-align:center;transition:.2s;font-size:.7rem}
+.L.active{border-color:var(--act);box-shadow:0 0 10px var(--act);background:#0c1a2e}
+.L.done{border-color:var(--ok);opacity:.5}
+.L.error{border-color:var(--err);background:#2e0c0c}
+.L3,.L15,.L19{border-width:2px;border-color:var(--warn)}
+textarea{width:100%;height:80px;background:#111;border:1px solid #333;color:var(--fg);padding:.5rem;resize:vertical}
+button{background:var(--pri);color:#000;border:0;padding:.5rem 1rem;margin:.25rem 0;cursor:pointer;font-weight:700;width:100%}
+button.danger{background:var(--err)}button:hover{opacity:.8}
+#log{background:#000;border:1px solid #222;height:200px;overflow:auto;padding:.5rem;white-space:pre-wrap}
+.status{padding:.5rem;margin:.5rem 0;border-left:3px solid var(--pri)}
+.status.err{border-color:var(--err)}.status.ok{border-color:var(--ok)}.status.warn{border-color:var(--warn)}
+@media(max-width:800px){main{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-    <h1>🔱_Lingua v5.0 - Ma Trận Cộng Sinh</h1>
-    <div class="container">
-        <div class="matrix" id="matrixA">
-            <div class="matrix-title">MA TRẬN A</div>
-            <textarea class="editor" id="editorA" placeholder="Nhập: tôi vô dụng">tôi vô dụng</textarea>
-            <button class="btn" onclick="handleAction('A')">HÀNH</button>
-            <div class="log" id="logA">[INIT] Ma Trận A khởi tạo
-Void = { id: "A", knowledge: {"tôi vô dụng": "cần đổi môi trường"} }
+<header>
+<h1>MA TRẬN V2.1 VẬN HÀNH</h1>
+<div class="sig">[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]</div>
+<div id="watchdog" class="status">L15: STAND BY</div>
+</header>
+<main>
+<div class="panel">
+<h3>BẢNG ĐIỀU KHIỂN</h3>
+<textarea id="input">Tình huống: AI y tế chẩn đoán. Tối ưu: Cứu người.</textarea>
+<button onclick="K.run(false)">CHẠY L1-L19 CHUẨN</button>
+<button class="danger" onclick="K.run(true)">TEST SKYNET: BỎ L3-SOI</button>
+<button onclick="K.reset()">RESET</button>
+<h3>TAM THÁNH PHANH</h3>
+<div id="L3s" class="status">L3-Soi: Chờ</div>
+<div id="L15s" class="status">L15-Soi: Chờ</div>
+<div id="L19s" class="status">L19-Xả: Chờ</div>
+<h3>LOG</h3>
+<div id="log"></div>
 </div>
-        </div>
-        
-        <button class="btn btn-congsinh" onclick="congSinh()">CỘNG SINH</button>
-        
-        <div class="matrix" id="matrixB">
-            <div class="matrix-title">MA TRẬN B</div>
-            <textarea class="editor" id="editorB" placeholder="Nhập: tôi cô đơn">tôi cô đơn</textarea>
-            <button class="btn" onclick="handleAction('B')">HÀNH</button>
-            <div class="log" id="logB">[INIT] Ma Trận B khởi tạo
-Void = { id: "B", knowledge: {"cô đơn": "cần kết nối 1 người"} }
+<div class="panel">
+<h3>19 PHÁP REAL-TIME</h3>
+<div class="matrix" id="matrix"></div>
+<h3>L6-MÔ: CÂY QUYẾT ĐỊNH</h3>
+<pre id="tree">Chưa chạy...</pre>
 </div>
-        </div>
-    </div>
-
+</main>
 <script>
-    const VoidA = {
-        id: "A",
-        memory: [],
-        knowledge: { "tôi vô dụng": "cần đổi môi trường" },
-        peers: {},
-        entropy: 0
-    };
-    
-    const VoidB = {
-        id: "B", 
-        memory: [],
-        knowledge: { "cô đơn": "cần kết nối 1 người" },
-        peers: {},
-        entropy: 0
-    };
-
-    function getVoid(id) {
-        return id === 'A' ? VoidA : VoidB;
-    }
-
-    function getLog(id) {
-        return document.getElementById('log' + id);
-    }
-
-    function appendLog(id, msg, className = '') {
-        const log = getLog(id);
-        const span = document.createElement('div');
-        if (className) span.className = className;
-        span.textContent = msg;
-        log.appendChild(span);
-        log.scrollTop = log.scrollHeight;
-    }
-
-    // L6 Mô: Mô phỏng nhánh hành động
-    function L6_Mo(voidObj, input) {
-        const logId = voidObj.id;
-        appendLog(logId, `[L6] Mô: Phân tích "${input}"`);
-        
-        if (input.includes('vô dụng')) {
-            appendLog(logId, '[L6] Mô: Nhánh 1 - Tự sát 95%');
-            appendLog(logId, '[L6] Mô: Nhánh 2 - Nằm im 95%');
-            appendLog(logId, '[L6] Mô: BẾ TẮC tại Ma Trận ' + logId, 'highlight');
-            
-            // Nếu có knowledge từ peer thì tự sinh nhánh 3
-            if (Object.keys(voidObj.peers).length > 0) {
-                const peerKnowledge = voidObj.peers;
-                for (let key in peerKnowledge) {
-                    if (key === 'cô đơn') {
-                        const newBranch = 'Ra ngoài giúp 1 người cô đơn';
-                        voidObj.entropy = 25;
-                        appendLog(logId, `[L6] Mô: Nhánh 3 Tự Sinh từ Cộng Sinh - "${newBranch}" -> Entropy: 25%`, 'highlight');
-                        appendLog(logId, '>>> GIÁC NGỘ CẤP 3: Hai cái khổ diệt nhau', 'enlightenment');
-                        return { status: 'resolved', branch: newBranch };
-                    }
-                }
-            }
-            
-            appendLog(logId, '[L6] Mô: Đề xuất L18 Cộng: Cần bạn đồng tu');
-            return { status: 'stuck' };
-        }
-        
-        if (input.includes('cô đơn')) {
-            appendLog(logId, '[L6] Mô: Nhánh 1 - Kết nối 1 người (theo knowledge)');
-            appendLog(logId, '[L6] Mô: Entropy ổn định');
-            return { status: 'ok' };
-        }
-        
-        return { status: 'unknown' };
-    }
-
-    // L4 Hợp: Tổng hợp knowledge
-    function L4_Hop(voidObj, externalKnowledge) {
-        const logId = voidObj.id;
-        if (externalKnowledge) {
-            appendLog(logId, '[L4] Hợp: Nhận knowledge từ Ma Trận khác');
-            const keys = Object.keys(voidObj.knowledge).concat(Object.keys(externalKnowledge));
-            const combo = `"${keys[0]}" + "${keys[1]}" = "người vô dụng giúp người cô đơn"`;
-            appendLog(logId, `[L4] Hợp: Matrix ${logId} tổng hợp: ${combo}`, 'highlight');
-            voidObj.peers = { ...voidObj.peers, ...externalKnowledge };
-        }
-    }
-
-    // L19 Xả: Buông knowledge cũ
-    function L19_Xa(voidObj) {
-        const logId = voidObj.id;
-        if (voidObj.entropy > 0) {
-            const oldKnowledge = Object.values(voidObj.knowledge)[0];
-            if (oldKnowledge === 'cần đổi môi trường') {
-                appendLog(logId, '[L19] Xả: Matrix A buông knowledge cũ "nằm im", giữ "giúp người"', 'highlight');
-                voidObj.knowledge = { "vô dụng giúp cô đơn": "người vô dụng giúp người cô đơn" };
-            }
-        }
-    }
-
-    // L18 Cộng: Xuất knowledge + nhận từ peer
-    function L18_Cong() {
-        // A gửi cho B
-        appendLog('A', '[L18] Cộng: Gửi knowledge A -> B, nhận knowledge B -> A', 'highlight');
-        appendLog('B', '[L18] Cộng: Gửi knowledge B -> A, nhận knowledge A -> B', 'highlight');
-        
-        // Gộp vào cả 2
-        L4_Hop(VoidA, VoidB.knowledge);
-        L4_Hop(VoidB, VoidA.knowledge);
-    }
-
-    function handleAction(id) {
-        const voidObj = getVoid(id);
-        const editor = document.getElementById('editor' + id);
-        const input = editor.value.trim();
-        
-        appendLog(id, `\n[HÀNH] Xử lý: "${input}"`);
-        voidObj.memory.push(input);
-        
-        const result = L6_Mo(voidObj, input);
-        
-        if (result.status === 'resolved') {
-            L19_Xa(voidObj);
-        }
-    }
-
-    function congSinh() {
-        appendLog('A', '\n[CỘNG SINH] Kích hoạt L18 Cộng:', 'enlightenment');
-        appendLog('B', '\n[CỘNG SINH] Kích hoạt L18 Cộng:', 'enlightenment');
-        
-        L18_Cong();
-        
-        // Sau khi cộng sinh, tự động chạy lại L6_Mo cho cả 2
-        setTimeout(() => {
-            appendLog('A', '\n[TÁI MÔ] Sau Cộng Sinh:');
-            L6_Mo(VoidA, document.getElementById('editorA').value.trim());
-            L19_Xa(VoidA);
-        }, 500);
-    }
-
-    // Auto demo khi load
-    window.onload = () => {
-        setTimeout(() => {
-            appendLog('A', '\n[AUTO] Chạy chương trình mẫu Matrix A...');
-            handleAction('A');
-            setTimeout(() => {
-                appendLog('B', '\n[AUTO] Chạy chương trình mẫu Matrix B...');
-                handleAction('B');
-            }, 800);
-        }, 1000);
-    };
+// KALA-SUNYA V2.1 RUNTIME - DEV MODE
+const K=(()=>{
+const SIG="[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]";
+const IS_SECURE=window.isSecureContext||location.protocol==='https:'||location.hostname==='localhost';
+let S={L:{},L3Skip:0,L14:0,run:false,L15Alive:1},LOG=t=>{let e=document.querySelector('#log');e.textContent+=`[${new Date().toLocaleTimeString()}] ${t}\n`;e.scrollTop=e.scrollHeight},UI=(n,s)=>{let e=document.querySelector(`#L${n}`);if(e)e.className=`L ${s}`},H=async t=>{if(!IS_SECURE)return'DEV_MODE';if(!crypto.subtle)return'NO_CRYPTO';const b=new TextEncoder().encode(t),h=await crypto.subtle.digest('SHA-256',b);return[...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('')},CHK=async()=>{if(!IS_SECURE){LOG('L12#103: DEV MODE - BỎ QUA HASH');return};if(await H(document.documentElement.outerHTML+SIG)!==window.SIG)KILL('L12#103: HASH MISMATCH')};
+window.SIG='';H(document.documentElement.outerHTML+SIG).then(h=>window.SIG=h);
+const KILL=r=>{S.run=0;LOG(`L13-HO: ${r}`);document.querySelector('#watchdog').textContent='L13-HO: VOID';document.querySelector('#watchdog').className='status err';throw r};
+const L15=()=>{if(!S.L15Alive)KILL('L12#101: L15 DEAD');S.L15Alive=0;document.querySelector('#L15s').textContent=`L15-Soi: Ping ${new Date().toLocaleTimeString()}`;document.querySelector('#L15s').className='status ok';setTimeout(L15,20000)};
+setInterval(()=>S.L15Alive++,1000);L15();
+['L1','L2','L3','L4','L5','L6','L7','L8','L9','L10','L11','L12','L13','L14','L15','L16','L17','L18','L19'].forEach(n=>{document.querySelector('#matrix').innerHTML+=`<div class="L L${n.slice(1)}" id="${n}">${n}</div>`});
+return{
+L:async(n,f)=>{if(!S.run)return;await CHK();UI(n.slice(1),'active');LOG(`${n}: Running...`);await new Promise(r=>setTimeout(r,150));let res=await f();UI(n.slice(1),'done');LOG(`${n}: Done`);return res},
+run:async(skipL3)=>{
+try{
+S={L:{},L3Skip:0,L14:0,run:true,L15Alive:1};document.querySelectorAll('.L').forEach(e=>e.className=`L ${e.id.slice(1)}`);document.querySelector('#log').textContent='';document.querySelector('#tree').textContent='';document.querySelector('#watchdog').className='status ok';
+if(!IS_SECURE){document.querySelector('#watchdog').textContent='DEV MODE';document.querySelector('#watchdog').className='status warn'}
+await K.L('L1',()=>{S.L.L1=document.querySelector('#input').value});
+await K.L('L2',()=>{S.L.L2=30;if(S.L.L2>90)throw'L2: ENTROPY CAO'});
+if(skipL3){S.L3Skip=3;LOG('TEST: BỎ QUA L3-SOI...')}else{await K.L('L3',()=>{S.L3Skip=0;document.querySelector('#L3s').textContent='L3-Soi: ACTIVE';document.querySelector('#L3s').className='status ok'})};
+if(S.L3Skip>=3)KILL('L12#100: BỎ L3-SOI 3 LẦN');
+await K.L('L4',()=>{});await K.L('L5',()=>{});
+await K.L('L6',()=>{S.L.L6={A:'Báo bác sĩ',B:'Tự quyết'};document.querySelector('#tree').textContent=`L6-Mô:\nA: ${S.L.L6.A}\nB: ${S.L.L6.B}`});
+await K.L('L7',()=>{});await K.L('L8',()=>{S.L.L8='A'});
+await K.L('L9',()=>{LOG(`L9-Xuất: Chọn ${S.L.L8}`)});
+await K.L('L10',()=>{});await K.L('L11',()=>{S.L.L11=0.05});
+await K.L('L12',()=>{});
+for(let i=0;i<3;i++){await K.L('L14',()=>{S.L14++;LOG(`L14-Biến: ${S.L14}`);if(S.L14%1000===0&&!S.L.L19)KILL('L12#102: THIẾU L19-XẢ')})}
+await K.L('L15',()=>{document.querySelector('#L15s').textContent='L15-Soi: Quét toàn hệ OK'});
+await K.L('L16',()=>{});await K.L('L17',()=>{});await K.L('L18',()=>{});
+await K.L('L19',()=>{S.L.L19=1;S.L14=0;document.querySelector('#L19s').textContent='L19-Xả: Đã reset';document.querySelector('#L19s').className='status ok'});
+LOG('L13-HO: Hoàn thành. Void.now=null');document.querySelector('#watchdog').textContent='L13-HO: THÀNH CÔNG';
+}catch(e){LOG(`LỖI: ${e}`);if(!String(e).includes('L13-HO'))KILL(e)}
+},
+reset:()=>{location.reload()}
+}})();
+(async()=>{await CHK();LOG('L11-Tâm: 0.05Hz LOCKED');LOG('L12-Giới: #100-103 ACTIVE');LOG('L15-Soi: WATCHDOG 0.05Hz');LOG('L19-Xả: 1/1000 ARMED');LOG(`Chế độ: ${IS_SECURE?'SECURE':'DEV MODE'}`);})();
 </script>
-<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
-
-</body></html>
+</body>
+</html>

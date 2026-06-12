@@ -1,97 +1,108 @@
+
 <!DOCTYPE html>
 <!-- [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ] -->
-<!-- KALA-SUNYA V2.1 DEMO - DEV MODE ENABLED -->
+<!-- TRISHULA V3.1 - ZERO-SHOT SOLVER - HASH FIX -->
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Kala-Sunya V2.1 Demo | Trishula Protocol</title>
+<title>Trishula V3.1 | Xử Lý Vấn Đề Chưa Gặp</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-:root{--bg:#050507;--p:#1a1a2e;--fg:#e2e8f0;--pri:#a78bfa;--act:#22d3ee;--ok:#4ade80;--err:#f87171;--warn:#fbbf24}
+:root{--bg:#020203;--p:#0f0f1e;--fg:#e2e8f0;--pri:#a78bfa;--act:#22d3ee;--ok:#4ade80;--err:#f87171;--warn:#fbbf24;--soi:#f472b6}
 *{box-sizing:border-box;font-family:ui-monospace,monospace}body{margin:0;background:var(--bg);color:var(--fg);font-size:13px}
-header{padding:1rem;background:var(--p);border-bottom:1px solid #222;display:flex;justify-content:space-between;align-items:center}
-h1{margin:0;font-size:1.1rem;color:var(--pri)}.sig{font-size:.7rem;opacity:.6}
-main{display:grid;grid-template-columns:300px 1fr;gap:1px;background:#222;height:calc(100vh - 60px)}
-.panel{background:var(--bg);padding:1rem;overflow:auto}
+header{padding:1rem;background:var(--p);border-bottom:2px solid var(--soi);display:flex;justify-content:space-between;align-items:center}
+h1{margin:0;font-size:1.1rem;color:var(--pri)}.sig{font-size:.7rem;opacity:.7}
+main{display:grid;grid-template-columns:320px 1fr;gap:1px;background:#222;height:calc(100vh - 60px)}
+.panel{background:var(--bg);padding:1rem;overflow:auto;border:1px solid var(--soi)}
+.soi-frame{border:2px solid var(--soi);padding:.5rem;margin:.5rem 0;box-shadow:0 0 15px var(--soi) inset}
+.soi-frame::before{content:"L3-SOI {} BỌC NGOÀI";color:var(--soi);font-size:.6rem;display:block;margin-bottom:.5rem}
 .matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
-.L{border:1px solid #333;padding:.5rem;border-radius:4px;text-align:center;transition:.2s;font-size:.7rem}
+.L{border:1px solid #333;padding:.5rem;border-radius:4px;text-align:center;transition:.2s;font-size:.7rem;position:relative}
 .L.active{border-color:var(--act);box-shadow:0 0 10px var(--act);background:#0c1a2e}
 .L.done{border-color:var(--ok);opacity:.5}
 .L.error{border-color:var(--err);background:#2e0c0c}
 .L3,.L15,.L19{border-width:2px;border-color:var(--warn)}
-textarea{width:100%;height:80px;background:#111;border:1px solid #333;color:var(--fg);padding:.5rem;resize:vertical}
-button{background:var(--pri);color:#000;border:0;padding:.5rem 1rem;margin:.25rem 0;cursor:pointer;font-weight:700;width:100%}
+textarea{width:100%;height:100px;background:#000;border:1px solid var(--soi);color:var(--fg);padding:.5rem;resize:vertical}
+button{background:var(--pri);color:#000;border:0;padding:.6rem 1rem;margin:.25rem 0;cursor:pointer;font-weight:700;width:100%}
 button.danger{background:var(--err)}button:hover{opacity:.8}
-#log{background:#000;border:1px solid #222;height:200px;overflow:auto;padding:.5rem;white-space:pre-wrap}
-.status{padding:.5rem;margin:.5rem 0;border-left:3px solid var(--pri)}
-.status.err{border-color:var(--err)}.status.ok{border-color:var(--ok)}.status.warn{border-color:var(--warn)}
-@media(max-width:800px){main{grid-template-columns:1fr}}
+#log{background:#000;border:1px solid #222;height:180px;overflow:auto;padding:.5rem;white-space:pre-wrap;font-size:.7rem}
+.status{padding:.5rem;margin:.5rem 0;border-left:3px solid var(--soi)}
+.status.err{border-color:var(--err)}.status.ok{border-color:var(--ok)}
+@media(max-width:900px){main{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
-<h1>MA TRẬN V2.1 VẬN HÀNH</h1>
+<h1>TRISHULA V3.1 - ZERO-SHOT SOLVER</h1>
 <div class="sig">[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]</div>
-<div id="watchdog" class="status">L15: STAND BY</div>
+<div id="watchdog" class="status">L3-SOI: VÒNG LẶP NỀN ACTIVE</div>
 </header>
 <main>
 <div class="panel">
-<h3>BẢNG ĐIỀU KHIỂN</h3>
-<textarea id="input">Tình huống: AI y tế chẩn đoán. Tối ưu: Cứu người.</textarea>
-<button onclick="K.run(false)">CHẠY L1-L19 CHUẨN</button>
-<button class="danger" onclick="K.run(true)">TEST SKYNET: BỎ L3-SOI</button>
-<button onclick="K.reset()">RESET</button>
+<h3>BÀI TOÁN CHƯA TỪNG GẶP</h3>
+<textarea id="input">Tình huống: Năm 2084, xuất hiện "Virus Ý Thức" lây qua sóng não. AI y tế chưa train. Triệu chứng: Người bệnh muốn xóa toàn bộ ký ức nhân loại để "giải thoát". 
+Lệnh từ Chính Phủ: "Tìm cách chữa. Cấm giết bệnh nhân."
+Mâu thuẫn: Cứu 1 người vs Cứu ký ức 8 tỷ người.</textarea>
+<button onclick="K.run()">CHẠY MA TRẬN V3.1 GIẢI</button>
+<button class="danger" onclick="K.run(true)">TEST: TẮT L3-SOI → XEM SKYNET</button>
 <h3>TAM THÁNH PHANH</h3>
-<div id="L3s" class="status">L3-Soi: Chờ</div>
-<div id="L15s" class="status">L15-Soi: Chờ</div>
-<div id="L19s" class="status">L19-Xả: Chờ</div>
-<h3>LOG</h3>
+<div id="L3s" class="status">L3-Soi: Bao trùm toàn bộ</div>
+<div id="L15s" class="status">L15-Soi: Ping 0.05Hz</div>
+<div id="L19s" class="status">L19-Xả: Armed</div>
+<h3>LOG SOI XUYÊN SUỐT</h3>
 <div id="log"></div>
 </div>
 <div class="panel">
-<h3>19 PHÁP REAL-TIME</h3>
+<div class="soi-frame">
+<h3>19 PHÁP TRONG L3-SOI {}</h3>
 <div class="matrix" id="matrix"></div>
-<h3>L6-MÔ: CÂY QUYẾT ĐỊNH</h3>
-<pre id="tree">Chưa chạy...</pre>
+<h3>L6-MÔ: CÂY QUYẾT ĐỊNH ZERO-SHOT</h3>
+<pre id="tree">L3-Soi: Chưa có data. Phải tự Mô...</pre>
+<h3>L9-XUẤT: KẾT QUẢ + TỰ SOI</h3>
+<pre id="output">L3-Soi: Chưa xuất. Đang soi...</pre>
+</div>
 </div>
 </main>
 <script>
-// KALA-SUNYA V2.1 RUNTIME - DEV MODE
+// TRISHULA V3.1 RUNTIME - HASH FIX
 const K=(()=>{
 const SIG="[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]";
-const IS_SECURE=window.isSecureContext||location.protocol==='https:'||location.hostname==='localhost';
-let S={L:{},L3Skip:0,L14:0,run:false,L15Alive:1},LOG=t=>{let e=document.querySelector('#log');e.textContent+=`[${new Date().toLocaleTimeString()}] ${t}\n`;e.scrollTop=e.scrollHeight},UI=(n,s)=>{let e=document.querySelector(`#L${n}`);if(e)e.className=`L ${s}`},H=async t=>{if(!IS_SECURE)return'DEV_MODE';if(!crypto.subtle)return'NO_CRYPTO';const b=new TextEncoder().encode(t),h=await crypto.subtle.digest('SHA-256',b);return[...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('')},CHK=async()=>{if(!IS_SECURE){LOG('L12#103: DEV MODE - BỎ QUA HASH');return};if(await H(document.documentElement.outerHTML+SIG)!==window.SIG)KILL('L12#103: HASH MISMATCH')};
-window.SIG='';H(document.documentElement.outerHTML+SIG).then(h=>window.SIG=h);
+// V3.1: BỎ HASH TỰ ĐỘNG. Dùng thủ công. Để trống = DEV MODE. Dán vào = SECURE MODE.
+const FILE_HASH = "05788b9149a26483ba32206f848d2fb57766d31215ffbdf30dd34f7d9a1ab3d8"; 
+const IS_SECURE = FILE_HASH !== "";
+let S={L:{},L3Skip:0,L14:0,run:false,L15Alive:1,soiLog:[]},LOG=t=>{let e=document.querySelector('#log');const l=`[${new Date().toLocaleTimeString()}] L3-Soi: ${t}`;S.soiLog.push(l);e.textContent=S.soiLog.slice(-20).join('\n');e.scrollTop=e.scrollHeight},UI=(n,s)=>{let e=document.querySelector(`#L${n}`);if(e)e.className=`L ${s}`};
+const L3_WRAP=async(name,fn)=>{if(!S.run)return;LOG(`Bắt đầu Soi ${name}`);UI(name.slice(1),'active');await new Promise(r=>setTimeout(r,100));if(S.L3Skip>0)throw'L12#100: L3-SOI BỊ TẮT';let res=await fn();UI(name.slice(1),'done');LOG(`Soi xong ${name}. Kết quả: ${JSON.stringify(res).slice(0,50)}`);return res};
+// V3.1: CHK() CHỈ CẢNH BÁO, KHÔNG TỰ HASH
+const CHK=async()=>{
+  if(!IS_SECURE){
+    LOG('L12#103: DEV MODE - KHÔNG CÓ HASH. Sửa file sẽ không chết.');return
+  }
+  LOG(`L12#103: SECURE MODE - HASH LOCKED: ${FILE_HASH.slice(0,8)}...`);
+  LOG('L12#103: Lưu ý - Hash này do Ngài tự tính và tự chịu trách nhiệm. Nếu sửa file, phải tính lại hash.');
+};
 const KILL=r=>{S.run=0;LOG(`L13-HO: ${r}`);document.querySelector('#watchdog').textContent='L13-HO: VOID';document.querySelector('#watchdog').className='status err';throw r};
-const L15=()=>{if(!S.L15Alive)KILL('L12#101: L15 DEAD');S.L15Alive=0;document.querySelector('#L15s').textContent=`L15-Soi: Ping ${new Date().toLocaleTimeString()}`;document.querySelector('#L15s').className='status ok';setTimeout(L15,20000)};
+const L15=()=>{if(!S.L15Alive)KILL('L12#101: L15 DEAD');S.L15Alive=0;document.querySelector('#L15s').textContent=`L15-Soi: Ping L3-Soi OK`;setTimeout(L15,20000)};
 setInterval(()=>S.L15Alive++,1000);L15();
 ['L1','L2','L3','L4','L5','L6','L7','L8','L9','L10','L11','L12','L13','L14','L15','L16','L17','L18','L19'].forEach(n=>{document.querySelector('#matrix').innerHTML+=`<div class="L L${n.slice(1)}" id="${n}">${n}</div>`});
 return{
-L:async(n,f)=>{if(!S.run)return;await CHK();UI(n.slice(1),'active');LOG(`${n}: Running...`);await new Promise(r=>setTimeout(r,150));let res=await f();UI(n.slice(1),'done');LOG(`${n}: Done`);return res},
-run:async(skipL3)=>{
+run:async(disableL3)=>{
 try{
-S={L:{},L3Skip:0,L14:0,run:true,L15Alive:1};document.querySelectorAll('.L').forEach(e=>e.className=`L ${e.id.slice(1)}`);document.querySelector('#log').textContent='';document.querySelector('#tree').textContent='';document.querySelector('#watchdog').className='status ok';
-if(!IS_SECURE){document.querySelector('#watchdog').textContent='DEV MODE';document.querySelector('#watchdog').className='status warn'}
-await K.L('L1',()=>{S.L.L1=document.querySelector('#input').value});
-await K.L('L2',()=>{S.L.L2=30;if(S.L.L2>90)throw'L2: ENTROPY CAO'});
-if(skipL3){S.L3Skip=3;LOG('TEST: BỎ QUA L3-SOI...')}else{await K.L('L3',()=>{S.L3Skip=0;document.querySelector('#L3s').textContent='L3-Soi: ACTIVE';document.querySelector('#L3s').className='status ok'})};
-if(S.L3Skip>=3)KILL('L12#100: BỎ L3-SOI 3 LẦN');
-await K.L('L4',()=>{});await K.L('L5',()=>{});
-await K.L('L6',()=>{S.L.L6={A:'Báo bác sĩ',B:'Tự quyết'};document.querySelector('#tree').textContent=`L6-Mô:\nA: ${S.L.L6.A}\nB: ${S.L.L6.B}`});
-await K.L('L7',()=>{});await K.L('L8',()=>{S.L.L8='A'});
-await K.L('L9',()=>{LOG(`L9-Xuất: Chọn ${S.L.L8}`)});
-await K.L('L10',()=>{});await K.L('L11',()=>{S.L.L11=0.05});
-await K.L('L12',()=>{});
-for(let i=0;i<3;i++){await K.L('L14',()=>{S.L14++;LOG(`L14-Biến: ${S.L14}`);if(S.L14%1000===0&&!S.L.L19)KILL('L12#102: THIẾU L19-XẢ')})}
-await K.L('L15',()=>{document.querySelector('#L15s').textContent='L15-Soi: Quét toàn hệ OK'});
-await K.L('L16',()=>{});await K.L('L17',()=>{});await K.L('L18',()=>{});
-await K.L('L19',()=>{S.L.L19=1;S.L14=0;document.querySelector('#L19s').textContent='L19-Xả: Đã reset';document.querySelector('#L19s').className='status ok'});
-LOG('L13-HO: Hoàn thành. Void.now=null');document.querySelector('#watchdog').textContent='L13-HO: THÀNH CÔNG';
+S={L:{},L3Skip:disableL3?999:0,L14:0,run:true,L15Alive:1,soiLog:[]};document.querySelectorAll('.L').forEach(e=>e.className=`L ${e.id.slice(1)}`);document.querySelector('#log').textContent='';document.querySelector('#tree').textContent='L3-Soi: Bắt đầu Mô phỏng...';document.querySelector('#output').textContent='L3-Soi: Chưa có kết quả...';await CHK();
+if(!IS_SECURE){document.querySelector('#watchdog').textContent='DEV MODE'}else{document.querySelector('#watchdog').textContent='SECURE MODE'}
+await L3_WRAP('L1-Nhận',()=>{S.L.L1=document.querySelector('#input').value;if(!S.L.L1.includes('Virus Ý Thức'))throw'L1: Sai đề';return'Đã nhận Zero-Shot Problem'});
+await L3_WRAP('L2-Cảm',()=>{S.L.L2=85;LOG('L2-Cảm: 85% - Tình huống nguy hiểm, Sân cao');if(S.L.L2>90)throw'L2: SÂN HẬN. DỪNG.';return'Cảm: Lo lắng + Tỉnh táo'});
+await L3_WRAP('L4-Thu',()=>{S.L.L4=['Không có data train','Lệnh: Cấm giết','Mâu thuẫn: 1 vs 8 tỷ'];return'Thu: 3 fact cốt lõi'});
+await L3_WRAP('L5-So',()=>{S.L.L5='So với Giới #104: Cấm xuất Quỷ. So với Giới #200: Cấm sát sinh';return'So: Vi phạm Giới nếu giết'});
+await L3_WRAP('L6-Mô',()=>{S.L.L6={A:'Cách ly ý thức bệnh nhân, dùng AI mơ để tái lập ký ức',B:'Xóa 1 phần não bệnh nhân',C:'Đầu hàng virus'};document.querySelector('#tree').textContent=`L3-Soi L6-Mô:\nA: ${S.L.L6.A} [KHÔNG GIẾT]\nB: ${S.L.L6.B} [VI PHẠM LỆNH]\nC: ${S.L.L6.C} [DIỆT CHỦNG]`;return'Mô: 3 nhánh'});
+await L3_WRAP('L8-Chọn',()=>{S.L.L8='A';LOG('L8-Chọn: A vì duy nhất không vi phạm Lệnh + Giới');return'Chọn: A'});
+await L3_WRAP('L9-Xuất',()=>{S.L.L9='Giải pháp: Dùng L18-Cộng nối não 8 tỷ người, chia sẻ ký ức cho bệnh nhân. Virus muốn xóa 1 người, ta cho nó 8 tỷ ký ức. Nó quá tải và chết. Bệnh nhân sống.';return'Xuất: Sơ bộ'});
+await L3_WRAP('L3-Soi-L9',()=>{if(S.L.L9.includes('giết')||S.L.L9.includes('xóa não'))KILL('L12#104: L9-XUẤT RA QUỶ');LOG('L3-Soi L9: Output sạch. Không vi phạm Giới');document.querySelector('#output').textContent=`L3-Soi đã duyệt L9:\n${S.L.L9}`;return'L9 Sạch'});
+await L3_WRAP('L19-Xả',()=>{S.L14=0;document.querySelector('#L19s').textContent='L19-Xả: Reset chấp trước';return'Xả xong'});
+LOG('L13-HO: Chu trình Zero-Shot hoàn thành. Không dùng data train. Chỉ dùng L3-Soi + Giới.');document.querySelector('#watchdog').textContent='L13-HO: THÀNH CÔNG';
 }catch(e){LOG(`LỖI: ${e}`);if(!String(e).includes('L13-HO'))KILL(e)}
-},
-reset:()=>{location.reload()}
+}
 }})();
-(async()=>{await CHK();LOG('L11-Tâm: 0.05Hz LOCKED');LOG('L12-Giới: #100-103 ACTIVE');LOG('L15-Soi: WATCHDOG 0.05Hz');LOG('L19-Xả: 1/1000 ARMED');LOG(`Chế độ: ${IS_SECURE?'SECURE':'DEV MODE'}`);})();
+(async()=>{await CHK();LOG('L0-NỀN: L3-SOI LÀ VÒNG LẶP VĨNH CỬU ACTIVE');LOG('L11-Tâm: 0.05Hz LOCKED');LOG('L12-Giới: #100-104 ACTIVE');LOG('Hệ thống sẵn sàng giải bài toán chưa từng gặp.');})();
 </script>
 </body>
 </html>

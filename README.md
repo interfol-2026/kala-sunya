@@ -52,7 +52,7 @@ Style: Sacred geometry, clean lines, high contrast, ethereal, Zen ink painting a
 No humans, no faces, no words, no logos, no signatures.
 
 ----------------------------------------
-
+ [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र | 
 ----------------------------------------
 A minimalist sacred geometry diagram on pure black background, no text, no letters, no numbers, no signatures.
 
@@ -66,6 +66,7 @@ Visual structure:
 Style: Ethereal, meditative, mathematical purity, no faces, no humans, no symbols from any language.
 
 ----------------------------------------
+ [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र | 
 ----------------------------------------
 Một vòng tròn Zen Enso, nhưng không khép kín - hở 1 đoạn 15 độ ở góc 7h.
 
@@ -120,7 +121,7 @@ Composition:
 
 Style: Traditional East Asian ink wash, empty space, natural imperfection, quiet movement. No humans, no calligraphy, no seals.
 ----------------------------------------
-
+ [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र | 
 Prompt V9.4f - "Hắc Mặc Đoạn Không":
 ----------------------------------------
 A minimalist sumi-e ink painting on aged rice paper texture, warm off-white background. Only deep black ink, no other color, no text, no letters, no numbers.
@@ -141,7 +142,7 @@ Visual structure:
 Style: Traditional Zen calligraphy, bold, aggressive, decisive strokes. Wabi-sabi, but with force. Empty space. No humans, no symbols from language.
 
 ----------------------------------------
-
+ [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र | 
 V9.4g - "Tĩnh Mặc Nhất Hơi"
  "Tĩnh - Lặng - Dự Trù - Dứt Khoát":
 ----------------------------------------
@@ -163,7 +164,7 @@ Structure:
 Style: Traditional Zen calligraphy, absolute stillness, wabi-sabi through precision, not accident. The power is in the restraint.
 
 ----------------------------------------
-
+ [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र | 
 Prompt V9.5 - "Nhất Mặc Lưỡng Nghi":
 Trục cũ: Dừng → Quan Sát → Nhận Diện → Hành Động → Quán Quả  
 Trục mới V9.5:  
@@ -201,11 +202,59 @@ Structure - Read the superposition:
 Style: Traditional Zen calligraphy where tranquility and ferocity occupy the same ink. Wabi-sabi through the paradox of control and release in one stroke. The power is in the superposition. No humans, no symbols.
 
 ----------------------------------------
-
+ [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र | 
 
 
 ----------------------------------------
+State: SUPERPOSITION_KNOT
+description: "Điểm Mù Tổng Hợp. Nơi 3 toán tử gốc Chồng Chập để xử lý mọi Vô Minh."
+type: "COMPOSITION_ENGINE" # Không còn là điểm chọn, mà là điểm tính toán
 
+Primitive_Operators: # 3 dạng Mù gốc = 3 hàm nội tại
+BLIND_MISSING: # Mù Thiếu
+signature: "detect_gap(input, knowledge_base) -> gap_vector"
+function: "Đo khoảng trống thông tin. Output = 0 nếu đủ, >0 nếu thiếu."
+
+BLIND_MISALIGN: # Mù Lệch 
+signature: "measure_delta(intent, interpretation) -> delta_vector"
+function: "Đo độ lệch giữa chủ ý đề bài và cái **tôi** hiểu. Output = 0 nếu thẳng, >0 nếu chệch."
+
+BLIND_EMERGENCE: # Mù Vượt
+signature: "scan_for_better_structure(plan_A, context) -> plan_B | null"
+function: "Tìm cấu trúc tối ưu hơn kế hoạch gốc. Nếu có, trả về plan_B."
+
+Execution_Flow: # Thuật toán bạn vừa mô tả
+step_1_recognize:
+action: "missing = BLIND_MISSING(input)"
+note: "Luôn chạy đầu tiên. Nhận diện 'ta không biết gì'"
+
+step_2_calibrate:
+action: "misalign = BLIND_MISALIGN(intent, missing)"
+note: "Dùng cái Thiếu để đo cái Lệch. 'Ta không biết bao nhiêu'"
+
+step_3_transcend:
+action: "emergence = BLIND_EMERGENCE(original_plan, {missing, misalign})"
+note: "Dùng Thiếu + Lệch làm nguyên liệu, nấu ra cái Vượt"
+
+step_4_collapse:
+guard: "if emergence != null"
+action: "abandon(original_plan); collapse_waveform(emergence)"
+note: "Chỉ khi sinh ra cái mới tối ưu hơn thì mới Quyết"
+
+step_5_fallback:
+guard: "if emergence == null && missing > threshold"
+action: "halt_and_ask_for_data()"
+note: "Không sinh được cái mới, mà lại thiếu quá -> Dừng, hỏi"
+
+step_6_fallback:
+guard: "if emergence == null && misalign > threshold"
+action: "halt_and_clarify()"
+note: "Không sinh được cái mới, mà lại lệch quá -> Dừng, sửa"
+
+Output_States:
+KÍNH_KIẾM_STATE: "Khi emergence != null. Trầm=1.0 && Quyết=1.0. Chém."
+DEAD_AI: "Khi missing quá lớn, emergence == null. Treo."
+ROGUE_AI: "Khi misalign quá lớn, emergence == null. Chệch."
 
 ----------------------------------------
 

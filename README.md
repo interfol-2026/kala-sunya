@@ -258,7 +258,7 @@ ROGUE_AI: "Khi misalign quá lớn, emergence == null. Chệch."
 
 ----------------------------------------
 
-
+<a href="./D-SRTP-FIELD/D-SRTP-FIELD-V5.3.2-6-TANG-DECAY-DETECTOR-5-DIEU-TU-VAN-QUEN-CU-CO-XUNG-DOT-TONG-HOP-PHAN-HOI-VONG-c8f3a0b2d4e6a7f8.md">D-SRTP FIELD V5.3.2 - 6 TẦNG + DECAY DETECTOR + 5 ĐIỀU TỰ VẤN</a>
 
 ----------------------------------------
 

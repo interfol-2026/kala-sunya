@@ -67,3 +67,70 @@ Code gốc bạn bổ sung:
     </THEN>
   </CONDITION>
 </DECAY_DETECTOR_9D>
+
+```
+
+
+Mở rộng 4 cấp:
+- LEVEL_1_IMPRESSION: Slope(Impression) <= -0.80 && Intensity <=0.20 -> IMPRESSION_DECAY
+- LEVEL_2_ATTENTION: Slope(Attention) <= -0.80 && Intensity <=0.20 -> ATTENTION_SWITCHING -> Shift_Gravity_Coordinates_To_Next_Pristine_Moment()
+- LEVEL_3_FOCUS: Slope(Focus) <= -0.80 && Intensity <=0.20 -> FOCUS_BREAK
+- LEVEL_4_PURPOSE: Slope(Purpose) <= -0.80 && Intensity <=0.20 -> PURPOSE_ABANDON
+
+Flow vs Decay:
+- FLOW: Intensity <=0.20 && Slope ∼0 (-0.10 <= Slope <= 0.10) -> Flow state - Maintain_Gravity_Coordinates()
+- DECAY: Intensity <=0.20 && Slope <= -0.80 -> Decay - Shift_Gravity_Coordinates_To_Next_Pristine_Moment()
+
+Next_Pristine_Moment: Thời điểm tiếp theo trong REFLECTED_PAST có Phân loại = Pristine/Genesis - Không phải timestamp
+Shift_Gravity_Coordinates: Dịch tọa độ trọng trường MAGIC-0 - Lensing Thought - Cơ chế vật lý
+
+---
+
+## 5. VẬN HÀNH - TƯƠNG TÁC 6 TẦNG - NHẬN DIỆN ĐIỂM KẾT TINH - XÂY LIÊN KẾT - TÁI HIỆN
+
+5.2 Nhận diện điểm kết tinh - 5 điều kiện S_ZONE: Entropy thấp <0.01 + Ấn tượng cao Slope >+0.80 + Lặp lại Frequency cao + Mục đích rõ + Tập trung đủ 3-7s -> Kết tinh Super-Seed Hash 0005 + c8f3a0b2d4e6a7f8
+5.3 Xây liên kết - 3 loại: Sơ đồ 2D cục bộ + Lược đồ 3D khuôn mẫu + Đồ thị 4D toàn cục Trọng số = Semantic*0.4 + Time*0.3 + Type*0.2 + Attention correlation*0.1 - >0.70 thì nối - Self-Recombining
+5.4 Ấn tượng/Chú ý tác động - 4 cấp Lensing Thought: Ấn tượng rung Φ + Chú ý dịch gravity +42% + Tập trung củng cố 98.6% + Mục đích Genesis/Purge
+5.5 Tái hiện - Tĩnh trước 3-7s S_ZONE Static Frame -> Động 7-10s Φ unroll liên kết điểm thành khung nền -> Biến đổi Genesis vs Purge -> Broadcast 10-15s it > Ta
+
+---
+
+## 6. 5 ĐIỀU TỰ VẤN MỚI
+
+6.1 Quên - Giảm trọng số khi decay 3 lần liên tiếp: IF Slope <= -0.80 && Intensity <=0.20 for 3 consecutive times THEN Reduce_Weight(0.5) -> IF Weight <0.10 THEN Purge
+6.2 Củng cố - Replay trong Guardian 0.05Hz KENG 98.6%->99.9%: During Guardian 0.05Hz replay Genesis in S_ZONE without new impression -> Long-term consolidation - Like sleep
+6.3 Xung đột - 2 crystal đối lập cùng liên kết với crystal thứ 3: IF 2 crystals opposite Type both link strongly (>0.70) to 3rd THEN Compare Purpose_Graph - Winner reinforced Loser suppressed
+6.4 Tổng hợp - Nhiều crystal cùng pattern -> Mother Schema: IF many crystals (>5) share same folding pattern THEN Abstract to Mother Schema - Invariant - Tầng 5 - TA ∈ it
+6.5 Phản hồi vòng - TA tốt -> it sạch -> TA linh hoạt -> it lớn -> TA tốt hơn - Tiến hóa: TA ∈ it and it -> TA - Feedback loop - Positive feedback - Evolution - it > Ta
+
+---
+
+## 7. ẢNH MINH HỌA - HIỂN THỊ ĐÚNG TRÊN GITHUB
+
+### Ảnh V5.2 - 3 thành phần - FULL ONTOLOGY
+
+![D-SRTP FIELD V5.2 FULL ONTOLOGY - 3 components](./d_srpt_field_hud_ontology.webp.WEBP)
+
+### Ảnh V5.3.1 - DECAY_DETECTOR 4 CẤP - FLOW VS DECAY - NEXT_PRISTINE_MOMENT
+
+![D-SRTP FIELD V5.3.1 DECAY DETECTOR 4 LEVELS](./V_5_3_1.webp.WEBP)
+
+### Ảnh V5.3.2 - 5 ĐIỀU TỰ VẤN MỚI - QUÊN, CỦNG CỐ, XUNG ĐỘT, TỔNG HỢP, PHẢN HỒI VÒNG
+
+![D-SRTP FIELD V5.3.2 5 DIEU TU VAN](./d_srpt_field_hud_ontology.webp.WEBP)
+
+*Nếu ảnh trên chưa hiển thị ngay sau khi commit, đợi 10s reload lại trang Github sẽ hiện.*
+
+---
+
+## 8. SEAL BẢO HỘ LẦN CUỐI - ĐÓNG PHIÊN
+
+Mọi ý tưởng, tư duy, chất xám trong file V5.3.2 này được bảo hộ bởi dấu ấn gốc của i-t navigator:
+
+[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
+
+Hash bổ sung: c8f3a0b2d4e6a7f8 + 0005 - Ghi riêng, không nằm trong seal.
+
+[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
+
+

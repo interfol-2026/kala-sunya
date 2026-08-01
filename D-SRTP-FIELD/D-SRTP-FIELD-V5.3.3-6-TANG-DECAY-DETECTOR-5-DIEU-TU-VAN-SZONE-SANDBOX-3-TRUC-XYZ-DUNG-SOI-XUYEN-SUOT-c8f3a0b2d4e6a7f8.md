@@ -11,7 +11,7 @@
 **Repo:** kala-sunya/D-SRTP-FIELD/ - Tinh chỉnh từ V5.3.2 + V5.3.2.1 MEMORY_RECALL 697KB + Góc nhìn DỪNG + SOI xuyên suốt của bạn
 **Dữ kiện mới:** Ảnh V_5_3_2_1_MEMORY_RECALL.webp.WEBP 697KB up 09:51 + Góc nhìn DỪNG và SOI là lõi xuyên suốt trước-trong-sau
 
-![V_5_3_2_1_MEMORY_RECALL](V_5_3_2_1_MEMORY_RECALL.webp.WEB)
+![V_5_3_2_1_MEMORY_RECALL](V_5_3_2_1_MEMORY_RECALL.webp.WEBP)
 
 ---
 

@@ -1,4 +1,4 @@
-###Program Architecture:
+### Program Architecture:
 
 - trả lời: **Chúng ta định làm gì? Làm cái gì?** (Planning)
 
@@ -6,7 +6,7 @@
 
 ![](D-SRTP-FIELD/image/Program-Architecture.PNG)
 
-###Production Architecture
+### Production Architecture
 
 - trả lời: **Chúng ta đang tạo ra nó như thế nào? Làm như thế nào?** (Production)
 
@@ -14,7 +14,7 @@
 
 ![](D-SRTP-FIELD/image/Production-Architecture.PNG)
 
-###Quality Architecture
+### Quality Architecture
 
 - trả lời: *Chúng ta đánh giá chất lượng ra sao? Làm dựa trên những tiêu chuẩn nào để biết Slice đã "đủ"?* (Quality)
 
@@ -35,7 +35,7 @@
 ![](D-SRTP-FIELD/image/Master-Connection-Map.PNG)
 
 
-###Live Atlas Dashboard
+### Live Atlas Dashboard
 
 trả lời: *Ngay lúc này hệ thống đang ở trạng thái nào, cần chú ý gì và bước tiếp theo là gì?* (Runtime Dashboard)
 
@@ -54,7 +54,7 @@ Các thành phần:
 
 
 
-###Atlas Development Architecture (ADA)
+### Atlas Development Architecture (ADA)
 
 Ðây là kiến trúc của **quá trình tạo ra kiến trúc**:
 
@@ -84,7 +84,7 @@ Nó trả lời:
 >’bản thân kiến trúc có **tính tự phản chiếu (self-descriptive)**: khi đạt đến một mức độ phức tạp nhất định, nó cần sinh ra các tầng mới để quản lý, biểu diễn và kiểm chứng chính nó.’
 
 
-###Architectural Grammar
+### Architectural Grammar
 
 >’Không chỉ là danh sách primitive, mà là các quy tắc như:
 
@@ -104,7 +104,7 @@ Nó trả lời:
 
 
 
-###Atlas Development Architecture v5.0
+### Atlas Development Architecture v5.0
 
 - - - Ðây là một vòng lặp khép kín.
 
@@ -146,7 +146,7 @@ Dashboard chuyển từ **hiển thị thông tin** sang **hỗ trợ ra quyết
 
 
 
-###TỔNG KẾT
+### TỔNG KẾT
 
 Lúc đầu, tôi coi Dashboard là **đích đến**: nơi hiển thị mọi thứ.
 

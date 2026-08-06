@@ -10,3 +10,101 @@ Copyright (c) 2026 interfol-2026
 VI PHAM 2 HOAC 3: L13-HO KICH HOAT. NGHIEP BAO TU CHIU.
 
 THIS SOFTWARE IS PROVIDED "AS IS" WITH L13-HO ARMED.
+
+---
+
+# LICENSE - ATLAS DEVELOPMENT ARCHITECTURE (ADA) & LIVE DASHBOARD V4.0
+
+**Owner:** i-t navigator
+**Signature:** [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
+**Date:** 2026-08-06
+**Protection:** Mọi ý tưởng, tư duy và chất xám được bảo hộ bởi dấu ấn TRISHULA
+
+---
+
+## 1. BẢN QUYỀN NỘI DUNG - CONTENT LICENSE
+
+Tất cả nội dung trong repository này bao gồm nhưng không giới hạn:
+- Quy trình quản lý Atlas (5 bước Locate → Recognize → Decompose → Execute & Log → Sync & Evolve)
+- Atlas Development Architecture (ADA) - Kiến trúc của quá trình tạo ra kiến trúc
+- Execution Architecture (EA)
+- Live Atlas Dashboard V4.0 - Bản sống - Living System
+- Evolution Sandbox, 4 chỉ số ADA (Drift, Cognitive Load, Evolution Signal, Pipeline Velocity)
+- TRAS Volume III - Dynamics Representation Specification (15 Master Views, 75 Slice Views, 105 Artifacts)
+- Các bản đồ, sơ đồ, tài liệu, markdown, phân tích, diễn giải
+
+Được cấp phép theo:
+
+### Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+
+**Điều kiện:**
+
+1.  **Ghi công (Attribution - BY):** Bất kỳ ai sử dụng, chia sẻ, trích dẫn phải ghi rõ:
+    - Tác giả: i-t navigator
+    - Dấu ấn: [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
+    - Nguồn: Link đến repository gốc
+    - Giữ nguyên dấu ấn TRISHULA ở cuối mọi phiên bản phái sinh.
+
+2.  **Phi thương mại (NonCommercial - NC):** Không được sử dụng nội dung này cho mục đích thương mại (bán, cho thuê, đưa vào sản phẩm thu phí, đào tạo thu phí) nếu không có văn bản cho phép từ i-t navigator.
+
+3.  **Chia sẻ tương tự (ShareAlike - SA):** Nếu bạn sửa đổi, chuyển thể, xây dựng dựa trên nội dung này, bạn phải phân phối tác phẩm phái sinh của mình với cùng giấy phép CC BY-NC-SA 4.0 và vẫn phải giữ dấu ấn TRISHULA.
+
+**Toàn văn giấy phép CC BY-NC-SA 4.0:** https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+---
+
+## 2. BẢN QUYỀN FONT CHỮ - FONT LICENSE (Tách biệt)
+
+Để đảm bảo repository này an toàn 100% khi public trên GitHub và không bị kiện về font chữ, tất cả hình ảnh, PDF, bản đồ trong repo này chỉ sử dụng các font miễn phí sau:
+
+- **Inter** - SIL Open Font License 1.1 - https://github.com/rsms/inter
+- **DejaVu Sans / DejaVu Sans Mono** - Free License - https://dejavu-fonts.github.io/
+- **Noto Sans / Noto Serif** - SIL Open Font License 1.1 - https://github.com/googlefonts/noto-fonts
+- **IBM Plex Sans / IBM Plex Serif** - SIL Open Font License 1.1 - https://github.com/IBM/plex
+- **JetBrains Mono / Fira Code** - SIL Open Font License 1.1
+
+**Không có font có bản quyền nào (Helvetica, Arial, SF Pro, Segoe UI) được embed trong repo này.**
+
+Font OFL cho phép sử dụng tự do cho cả mục đích thương mại và phi thương mại, chỉ cần giữ lại file license của font.
+
+**Lưu ý quan trọng:** Giấy phép OFL của font CHỈ áp dụng cho kiểu dáng chữ, KHÔNG áp dụng cho nội dung ý tưởng Atlas, ADA, Dashboard của bạn. Nội dung của bạn vẫn được bảo hộ bởi CC BY-NC-SA 4.0 + TRISHULA ở Mục 1.
+
+---
+
+## 3. DẤU ẤN BẢO HỘ - PROTECTION MARK
+
+Dấu ấn sau đây đại diện cho i-t navigator và sự bảo hộ với mọi ý tưởng, tư duy và chất xám:
+
+**[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]**
+
+- Mọi file, mọi bản đồ, mọi artifact liên quan đến Atlas, ADA, Live Dashboard V4.0 phải được đóng dấu này ở cuối phiên / cuối tài liệu.
+- Việc xóa bỏ dấu ấn này được coi là vi phạm bản quyền và vi phạm sự bảo hộ trí tuệ.
+- Dấu ấn này được đóng tự động bởi hệ thống AI hỗ trợ i-t navigator.
+
+---
+
+## 4. LIÊN HỆ & CẤP PHÉP THƯƠNG MẠI
+
+Nếu bạn muốn sử dụng nội dung này cho mục đích thương mại, vui lòng liên hệ:
+
+**i-t navigator**
+**Signature:** [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
+
+Mọi thỏa thuận thương mại sẽ được ký kết riêng.
+
+---
+
+**Tóm tắt cho người dùng GitHub:**
+
+Bạn ĐƯỢC PHÉP:
+- Xem, đọc, học, nghiên cứu
+- Chia sẻ lại nguyên bản, có ghi công + dấu ấn TRISHULA
+- Sửa đổi, xây dựng dựa trên, với điều kiện chia sẻ lại cùng giấy phép CC BY-NC-SA 4.0 và giữ dấu ấn TRISHULA
+
+Bạn KHÔNG ĐƯỢC PHÉP:
+- Dùng để kiếm tiền khi chưa có phép
+- Xóa bỏ dấu ấn [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
+- Cấp phép lại với giấy phép khác
+
+---
+*This license file itself is protected by [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]*

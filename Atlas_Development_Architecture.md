@@ -43,9 +43,12 @@ Các thành phần:
 
 ```
 
-- Recognition Stream, - Issue Tracker,
+- Recognition Stream, 
+- Issue Tracker,
 - Change Log,
-- Progress Heat Map, - Dependency Alerts, - Open Questions,
+- Progress Heat Map, 
+- Dependency Alerts, 
+- Open Questions,
 - Ready Queue.
 
 ```
@@ -316,6 +319,65 @@ Quality Gate: Coverage>=80%, Consistency>=80%, Clarity>=80% - Quality Score >=80
 ---
 
 **Trình tự đúng:** Nhận diện → Bản 1 Phân loại → Bản 2 Lộ trình → Bản 3 Quy chuẩn → Bản 4 Live Dashboard (tích hợp 3 bản + ghi nhận phát sinh) → Tiến hóa lên ADA
+
+---
+
+trong phiên thử nghiệm mini 5 hạng mục (S01-S05) mình đã nhận diện ra 4 câu hỏi cốt lõi - Đây chính là những gì sẽ nằm trên **Bản 4 - Live Dashboard - mục Open Questions** theo đúng quy trình của bạn.
+
+Mình liệt kê lại và đưa hướng xử lý theo đúng 4 bản nền:
+
+### 3 CÂU HỎI NHẬN DIỆN ĐƯỢC TRONG MINI TEST:
+
+**Câu hỏi 1 (Từ Bản 1 - Phân loại):**
+> **S01 - Thế nào là Core Concept? Tiêu chí nào để 1 khái niệm được gọi là Core?**
+
+*Hướng xử lý:*
+- Quay lại **Bản 3 - Quy chuẩn**: Định nghĩa Quality Gate cho Core Concept = phải xuất hiện trong >=3 Slices khác nhau + không thể xóa mà hệ thống vẫn chạy được.
+- VD: "Memory" là Core vì xuất hiện trong S02, S03, S05. "Color" không phải Core.
+- Sau khi định nghĩa xong → Ghi vào **Recognition Stream trên Bản 4**: "2026-08-06: Core = concept xuất hiện >=3 Slices"
+
+**Câu hỏi 2 (Từ Bản 2 - Lộ trình):**
+> **Tại sao S02 Memory Dynamics lại bị Blocking bởi S01? Nếu S01 chưa xong thì có làm S02 được không?**
+
+*Hướng xử lý:*
+- Kiểm tra **Dependency Graph trên Bản 2**: S02 cần định nghĩa của S01 để định nghĩa Memory. Nếu S01 chưa xong 80% (Quality Gate), thì không được làm S02.
+- Giải pháp: Áp dụng quy luật **Bản 3**: Nếu Quality Score S01 <80, thì S02 ở trạng thái BLOCKED. Phải tập trung hoàn thành S01 trước.
+- Ghi vào **Issue & Insight Tracker trên Bản 4**: "S02 BLOCKED by S01 - Need S01 Quality >=80"
+
+**Câu hỏi 3 (Từ Bản 3 - Quy chuẩn):**
+> **Quality Gate 80/100 là đủ hay cần 100/100? Và ai là người chấm điểm Quality?**
+
+*Hướng xử lý:*
+- Đây là câu hỏi về **Bản 3 - Quy chuẩn của quy chuẩn (Meta-Quality)**.
+- Đề xuất của mình (góc nhìn AI bổ sung): Dùng 2 lớp chấm:
+    - Lớp 1: AI tự chấm theo 6 tiêu chí (Coverage, Consistency...) - Tự động tính
+    - Lớp 2: Bạn (i-t navigator) duyệt cuối - Đánh giá Potential và Good/Bad
+- Nếu AI chấm 85/100 nhưng bạn thấy vẫn chưa đúng tinh thần Atlas → Vẫn là NOT DONE.
+- Ghi vào **Change Log trên Bản 4**: "Quality Gate = AI score 80% + Human approval"
+
+**Câu hỏi 4 (Từ Bản 4 - Bản sống - Đây là Emergence - Phát sinh trong lúc làm):**
+> **Khi làm S01, AI tự phát sinh ý tưởng "Core Concepts nên chia thành Static vs Dynamic" - Đây là ý tưởng mới không có trong kế hoạch ban đầu. Xử lý thế nào để không làm loạn dự án?**
+
+*Hướng xử lý theo đúng ADA:*
+- Đây chính là ví dụ điển hình cho **Evolution Sandbox**.
+- Bước 1: Không sửa ngay Bản 1. Ghi Emergence này vào **Evolution Sandbox trên Bản 4**:
+
+```
+
+    - Content: Core Concepts = Static (không đổi) + Dynamic (thay đổi theo thời gian)
+    - Type: Pattern Discovery
+    - Good/Bad: Good (làm rõ hơn)
+    - Potential: High
+    - Source: AI khi xử lý S01
+
+```
+
+- Bước 2: Sau 1 session, bạn đánh giá: Nếu Good + High → **Promote**
+- Bước 3: Khi Promote, mới quay lại sửa **Bản 1**: Tách S01 thành S01a Static Core và S01b Dynamic Core
+- Bước 4: Ghi vào **Change Log trên Bản 4**: "2026-08-06: S01 split into S01a/S01b due to Emergence from Sandbox - Promoted"
+- Bước 5: Cập nhật lại **Bản 2 Lộ trình**: S01a → S01b → S02...
+
+Đây chính là **ADA hoạt động**: AI tiến hóa (phát sinh ý tưởng mới) nhưng được kiểm soát, không phá dự án, và mọi ghi nhận phát sinh đều nằm trên Bản 4 Live Dashboard.
 
 **[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]**
 

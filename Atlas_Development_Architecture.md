@@ -24,7 +24,7 @@
 
 ![](D-SRTP-FIELD/image/Quality-Architecture.PNG)
 
-###Master Connection Map / Atlas Navigation & Linkage Map
+### Master Connection Map / Atlas Navigation & Linkage Map
 
 - trả lời: *Ngay lúc này hệ thống đang ở trạng thái nào, cần chú ý gì và bước tiếp theo là gì?* (Runtime Dashboard).
 

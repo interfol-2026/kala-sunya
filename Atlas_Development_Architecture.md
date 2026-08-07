@@ -104,7 +104,7 @@ Nó trả lời:
 
 Ðó là tầng "ngữ pháp" của kiến trúc. Khi có tầng này, Atlas sẽ không chỉ lưu trữ tri thức mà còn có cơ sở để **kiểm tra tính nhất quán, phát hiện mâu thuẫn và hỗ trợ kiến tạo các phần mới**.’
 
-![](D-SRTP-FIELD/image/Architectural Grammar.PNG)
+![](D-SRTP-FIELD/image/ArchitecturalGrammar.PNG)
 
 
 

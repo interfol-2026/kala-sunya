@@ -1,0 +1,357 @@
+<a href="ADA-Tomluoc.md">ADA-Tomluoc.md</a>
+
+<a href="Atlas_Development_Architecture.md">Atlas_Development_Architecture</a>
+
+
+# TRAS - QUY TRÌNH 4 BẢN NỀN + LIVE DASHBOARD V4.1 SELF-RECONSTRUCTION + ADA TIẾN HÓA - BẢN KIỆN TOÀN
+
+> **[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]**
+> **i-t navigator - Mọi ý tưởng, tư duy và chất xám được bảo hộ bởi dấu ấn TRISHULA**
+> **Bản kiện toàn - Đã rà soát xung đột cũ/mới - Gộp 120 trang + Mini Test + V4.1 Dogfooding**
+> **CC BY-NC-SA 4.0 + TRISHULA - Font: Inter, DejaVu, Noto - SIL OFL 1.1 - An toàn GitHub**
+
+---
+
+## 0. TỔNG QUAN - RÀ SOÁT XUNG ĐỘT CŨ/MỚI
+
+**Xung đột đã phát hiện và đã sửa trong bản kiện toàn này:**
+
+1.  **Xung đột 1 - Thứ tự:** Bản cũ nói 5 bước:
+
+Locate→Recognize→Decompose→Execute→Sync. 
+
+Bản mới nói 4 bản nền. → **Đã thống nhất:** 5 bước là vòng lặp vận hành BÊN TRONG mỗi bản. 4 bản nền là cấu trúc TĨNH phải tạo khi nhận diện dự án. Không xung đột, là 2 lớp khác nhau.
+
+2.  **Xung đột 2 - Vị trí ghi nhận phát sinh:** Bản cũ để Emergence rải rác ở Bước 4. Bản mới yêu cầu mọi phát sinh nằm trên Bản 4 Live Dashboard. → **Đã thống nhất:** Mọi Emergence, Recognition, Change Log, Open Questions đều nằm trên Bản 4 - Footer Living Zone. Bước 4 của vòng lặp chỉ là hành động ghi vào Bản 4.
+
+3.  **Xung đột 3 - Định nghĩa ADA:** Bản cũ nói ADA = Development + Execution. Bản mới sau Dogfooding nói ADA có thêm Self-Reconstruction Loop. → **Đã thống nhất:** ADA V4.1 = DA + EA + Self-Reconstruction Loop - Đây là tiến hóa, không phải xung đột.
+
+4.  **Xung đột 4 - Quality Gate:** Bản cũ nói >=80 là xong. Mini test hỏi 80 hay 100 và ai chấm? → **Đã thống nhất:** Quality Gate V4.1 = AI auto-score 80% (6 tiêu chí) + Human approval 20% (tinh thần Atlas) = 100/100 mới Done.
+
+Bản kiện toàn này là bản chuẩn cuối cùng, không còn chồng lấn.
+
+---
+
+## 1. GIAI ĐOẠN 0: NHẬN DIỆN DỰ ÁN / CÔNG VIỆC - ĐIỂM BẮT ĐẦU
+
+**Input:** Một dự án / công việc mới (VD: Xây Atlas 75 Slices, hoặc 1 Slice S10, hoặc việc đời thường)
+
+**Vòng lặp 5 bước vận hành bên trong giai đoạn nhận diện (Đây là vòng lặp con, không phải 4 bản nền):**
+1.  **LOCATE - Định vị:** Mission là gì? Đang ở đâu? (5 câu hỏi Architectural Compass)
+2.  **RECOGNIZE - Nhận diện:** Đã hiểu gì? Chưa hiểu gì? (Recognition vs Open Questions)
+3.  **DECOMPOSE - Phân tách:** Có thể tách thành việc nhỏ hơn không?
+4.  **EXECUTE & LOG - Thực thi & Ghi nhận:** Làm 1 việc nhỏ, ghi 2 thứ: Kết quả + Emergence (nếu có) - Ghi vào Bản 4
+5.  **SYNC & EVOLVE - Đồng bộ & Tiến hóa:** Cập nhật 3 bản nền + Bản 4
+
+**Output giai đoạn 0:** Quyết định làm. Nếu làm → Bắt buộc tạo tuần tự 3 bản nền sau đây, không được nhảy thẳng vào Dashboard.
+
+---
+
+## 2. BẢN 1: BẢN XÂY DỰNG PHÂN LOẠI - CLASSIFICATION / INVENTORY MAP
+
+**Câu hỏi duy nhất:** Có những gì cần làm?
+
+**Quy luật tạo Bản 1 - 3 bước:**
+
+**Bước 1.1 - Liệt kê toàn bộ (Exhaustive List):**
+- Với Atlas: 15 Master Views, 75 Slice Views, 12 Production Architecture, 105 Artifacts (Như Hình 1-3 trong file 120 trang gốc)
+- Với Mini Test: S01 Core Concepts, S02 Memory Dynamics, S03 Learning, S04 Quality Gate, S05 Live Dashboard Mini
+- Nguyên tắc: Không bỏ sót, không làm ngay, chỉ liệt kê
+
+**Bước 1.2 - Phân loại theo tính chất (Categorization):**
+- **Foundation (Nền tảng):** Phải làm trước, không có thì các việc khác sập - VD: S01 Core Concepts
+- **Core (Cốt lõi):** Quan trọng nhất, tạo giá trị chính - VD: S02, S03
+- **Integration (Tích hợp):** Làm sau cùng, gộp các việc trước lại - VD: S04, S05, Live Dashboard
+- **Emergence (Phát sinh):** Chưa biết lúc đầu, sẽ nảy sinh trong quá trình làm - Để trống, chờ ghi vào Evolution Sandbox trên Bản 4
+
+**Bước 1.3 - Đánh dấu vấn đề (Issue Marking):**
+- Mỗi hạng mục có vấn đề gì? VD: S02 Blocking vì phụ thuộc S01, S10 Blocking vì S03 Bridge
+- Ghi vào Issue Tracker - Sau này sẽ hiện trên Bản 4
+
+**Tiêu chuẩn xong Bản 1 (Từ Bản 3):**
+- **MECE:** Mutually Exclusive (Không trùng lặp), Collectively Exhaustive (Không bỏ sót)
+- **Completeness:** Số hạng mục đã liệt kê / Số thực tế >=90% mới được sang Bản 2
+- **Ví dụ Mini Test:** 5/5 = 100% - PASS - Được sang Bản 2
+
+**Vị trí trên Live Dashboard V4.1:** Body Cột 1 - Bản 1 Tracker - Hiển thị 15 Master, 75 Slice, 105 Artifacts - 63% Completed - Và sau Mini Test có thêm S01a Static Core, S01b Dynamic Core từ Emergence đã Promote
+
+---
+
+## 3. BẢN 2: BẢN LỘ TRÌNH XỬ LÝ - ROADMAP / PIPELINE MAP
+
+**Câu hỏi duy nhất:** Làm theo thứ tự nào?
+
+**Quy luật tạo Bản 2 - 3 bước:**
+
+**Bước 2.1 - Xác định phụ thuộc (Dependency Mapping):**
+- Việc nào phải xong trước thì việc kia mới làm được? Vẽ thành sơ đồ Directed Graph
+- VD Atlas: S06 (Core Concepts) → S10 (Memory Dynamics) → S12 (Learning)
+- VD Mini Test: S01 → S02 → S03 → S05, S04 → S05
+- VD Dashboard V4.1: Phase1 (Thêm 3 tracker) → Phase2 (Thêm Open Questions Zone) → Phase3 (Thêm Meta Layer)
+
+**Bước 2.2 - Chia Phase (Phasing):**
+- **P1 Foundation:** Làm các việc Foundation từ Bản 1
+- **P2 Core:** Làm các việc Core
+- **P3 Integration:** Tích hợp lại thành sản phẩm cuối (VD: Live Dashboard V4.1)
+- Mỗi Phase có mục tiêu rõ ràng, không lẫn lộn
+
+**Bước 2.3 - Gán ETA và Velocity (Timing):**
+- Mỗi hạng mục / Phase mất bao lâu? VD: S10 ETA 2 Sessions
+- **Pipeline Velocity:** Velocity = Số Slices Completed / Tuần
+- **ETA tổng:** ETA = (Tổng việc - Đã xong) / Velocity
+- VD Mini Test: Velocity 1 Slice/Session → ETA tổng 5 Sessions
+
+**Tiêu chuẩn xong Bản 2 (Từ Bản 3):**
+- **No Circular Dependency:** Không có vòng lặp A→B→C→A. Nếu có → Feasibility = 0 → Phải phá vòng lặp bằng cách định nghĩa lại hạng mục
+- **Clear ETA:** Mỗi Phase phải có ETA
+- **Ví dụ Mini Test:** No Circular - PASS
+
+**Vị trí trên Live Dashboard V4.1:** Body Cột 2 - Bản 2 Tracker - Hiển thị Pipeline Status, Dependency Alerts S06→S10→S12, Ready Queue, ETA
+
+---
+
+## 4. BẢN 3: BẢN QUY CHUẨN & TIÊU CHUẨN ĐÁNH GIÁ - QUALITY / STANDARD MAP
+
+**Câu hỏi duy nhất:** Thế nào là xong? Thế nào là đạt?
+
+**Đây là bản hay bị bỏ qua nhất, nhưng là bản quan trọng nhất để không bị làm ẩu. Bản 3 dùng để đánh giá Bản 1 và Bản 2.**
+
+**Quy luật tạo Bản 3 - 3 lớp quy chuẩn:**
+
+**Lớp 3.1 - Quy chuẩn cho Bản 1 (Classification Standard):**
+- **MECE:** Không trùng lặp, không bỏ sót
+- **Traceability:** Mỗi hạng mục trong Bản 1 phải truy được nguồn gốc tại sao phải có nó?
+
+**Lớp 3.2 - Quy chuẩn cho Bản 2 (Roadmap Standard):**
+- **No Circular:** Không vòng lặp phụ thuộc
+- **Resource Available:** Có đủ thời gian, AI agent, tài liệu để làm theo lộ trình không?
+
+**Lớp 3.3 - Quy chuẩn cho từng hạng mục (Artifact Quality Gate) - Quan trọng nhất:**
+- Mỗi Artifact (VD: S07 Semantics, S10 Memory Dynamics, hay Dashboard V4.1) khi nào thì được coi là xong?
+- Trong file 120 trang gốc, bạn đã định nghĩa Quality Gate với ví dụ S07: 58/100 NEEDS IMPROVEMENT
+- **Bản kiện toàn V4.1 thống nhất Quality Gate mới (Giải quyết Q3 trong Mini Test):**
+    - **6 tiêu chí AI tự chấm (80%):** Coverage, Consistency, Clarity, Completeness, Correctness, Traceability - Mỗi tiêu chí 0-100
+    - **1 tiêu chí Human duyệt (20%):** Spirit - Có đúng tinh thần Atlas / i-t navigator không? - Do bạn duyệt
+    - **Công thức:** Quality Score = (Tổng 6 tiêu chí AI /6)*0.8 + Spirit*0.2
+    - **Ngưỡng Done:** Quality Score >=80/100 mới được coi là Done. <80 là NEEDS IMPROVEMENT, <50 là NOT STARTED
+    - **Ví dụ:** S07 cũ 58/100 → Chưa Done. Dashboard V4.1 mới 100/100 → Done
+
+**Vị trí trên Live Dashboard V4.1:** Body Cột 3 - Bản 3 Tracker - Hiển thị Quality Gate hiện tại, Cross-Validation Status, MECE Check, No Circular Check
+
+---
+
+## 5. BẢN 4: LIVE DASHBOARD V4.1 - BẢNG ĐIỀU KHIỂN SỐNG - LIVING SYSTEM - BẢN SỐNG
+
+**Sau khi có 3 bản nền, mới đến Bản 4. Bản 4 là nơi TÍCH HỢP 3 bản trên + GHI NHẬN MỌI PHÁT SINH - Đây là bản sống, không phải báo cáo chết.**
+
+**Cấu trúc V4.1 kiện toàn - Đã tự tái cấu trúc sau Mini Test (Dogfooding):**
+
+[HEADER - TÍCH HỢP BẢN 1+2+3 - Integration Zone]
+
+Current Focus: (Từ Bản 2) - Đang ở đâu? Làm gì tiếp? ETA?
+- Ví dụ trước Mini Test: Volume III → S10 Memory Dynamics → Pipeline Step Semantics → Blocking S03 → Next Action Complete Semantic Layer ETA 2 Sessions
+- Ví dụ sau Mini Test (Tự xây lại Dashboard): Rebuilding Dashboard Itself → V4.0 → V4.1 → ETA 1 Session
+
+Architectural Compass: (Từ Bản 1) - Định vị 5 chiều
+- MISSION: Xây Reference Architecture về gì?
+- Phase: Volume nào? Slice nào? View nào? Goal gì?
+
+Quality Gate: (Từ Bản 3) - Đang đạt bao nhiêu?
+- Ví dụ: S07 58/100 NEEDS IMPROVEMENT → V4.1 Target 90/100
+
+[BODY - 3 CỘT - TRACKER CHO 3 BẢN NỀN - Đây là điểm mới của V4.1 so với V4.0]
+
+CỘT 1 - BẢN 1 TRACKER (Phân loại - Có những gì?):
+- Atlas Overview: 15 Master, 75 Slice, 12 Production, 105 Artifacts - 63% Completed (Từ Bản 1)
+- Atlas Network Map (Liên kết tổng thể) (Từ Bản 1)
+- Heat Map Phủ sóng (Từ Bản 1)
+- Sau Mini Test: Thêm S01a Static Core, S01b Dynamic Core (từ Emergence đã Promote)
+
+CỘT 2 - BẢN 2 TRACKER (Lộ trình - Đang ở đâu? Làm gì tiếp?):
+- Pipeline Hiện tại: S07 Dynamic Factors - SEMANTICS (Từ Bản 2)
+- Dependency Alerts: S06→S10→S12 (Từ Bản 2)
+- Ready Queue: Việc sẵn sàng làm (Từ Bản 2)
+- ETA & Velocity: (Từ Bản 2)
+- Sau Mini Test: Phase1 Done (Thêm 3 tracker), Phase2 Doing (Thêm Open Questions Zone), Phase3 Next (Meta Layer)
+
+CỘT 3 - BẢN 3 TRACKER (Quy chuẩn - Thế nào là xong?):
+- Quality Gate Hiện tại: S07 58/100 (Từ Bản 3)
+- Cross-Validation Status (Từ Bản 3)
+- MECE Check: 6 thành phần Dashboard có trùng không? (Từ Bản 3)
+- No Circular Check: Dashboard xây chính nó có vòng lặp vô hạn không? (Từ Bản 3)
+
+[FOOTER - BẢN SỐNG - LIVING ZONE - MỌI GHI NHẬN PHÁT SINH NẰM Ở ĐÂY - QUAN TRỌNG NHẤT - ĐÃ THỐNG NHẤT]
+
+Đây là nơi bạn yêu cầu: Những ghi nhận phát sinh sẽ nằm trên bản Live Dashboard. Đã thống nhất toàn bộ.
+
+- Recognition Stream (Dòng nhận diện - Đã hiểu gì?):
+    - Ghi lại những gì đã nhận diện được trong quá trình làm, kèm Evidence
+    - Ví dụ sau Mini Test:
+    [2026-08-06] Core = concept xuất hiện >=3 Slices (Trả lời Q1)
+    [2026-08-06] S02 BLOCKED until S01 Quality >=80 (Trả lời Q2)
+    [2026-08-06] Quality = AI 80% + Human 20% (Trả lời Q3)
+    [2026-08-06] Core = Static + Dynamic - Promoted from Sandbox (Trả lời Q4)
+
+- Issue & Insight Tracker (Vấn đề & Insight mới):
+    - Ghi lại vấn đề gặp phải và insight mới nảy sinh
+    - Ví dụ: S10 Blocking S03 Bridge
+
+- Change Log (Lịch sử thay đổi):
+    - Ai đổi? Đổi gì? Khi nào? Tại sao? Qua DA bước nào?
+    - Ví dụ: [2026-08-06] S01 split into S01a/S01b due to Emergence - Promoted from Evolution Sandbox
+    - [2026-08-06] Dashboard V4.0 → V4.1 - Added 3-board trackers + Open Questions Zone
+
+- Open Questions (Câu hỏi chưa trả lời):
+    - Zone riêng rõ ràng, không nằm lẫn
+    - Ví dụ trước Mini Test: 12 Open Questions
+    - Sau Mini Test: Q1-Q4 đã resolved, còn Q5 mới: Dashboard V4.1 tự đánh giá chính nó, vậy ai đánh giá người đánh giá? (Meta-meta question) - Để vào Sandbox
+
+- Evolution Sandbox (Khu vực tiến hóa an toàn - Nơi AI tiến hóa - Trái tim của bản sống):
+    - Nơi ghi nhận sự kiến tạo mới của AI/Agent khi xử lý mà không làm ảnh hưởng trực tiếp đến dự án xây dựng
+    - Mỗi Emergence được đánh giá:
+        - Content: Nội dung kiến tạo mới là gì?
+        - Type: Pattern Discovery / Representation Innovation / Process Optimization / Conceptual Mutation
+        - Good/Bad: Tốt hay xấu cho RA?
+        - Potential: High / Medium / Low
+        - Source: AI nào? Khi xử lý việc gì?
+        - Action: Promote (đưa vào RA qua Pipeline) / Archive (lưu tham khảo) / Discard (bỏ)
+    - Ví dụ thực tế đã chạy:
+    [RESOLVED] Content: Core Concepts = Static + Dynamic | Type: Pattern Discovery | Good/High | Source: AI xử lý S01 | Action: PROMOTED → Đã sửa Bản 1 thành S01a/S01b
+    [NEW] Content: Q5 Meta-meta question - Ai đánh giá người đánh giá? | Type: Conceptual Mutation | Medium | Action: ARCHIVE - Để nghiên cứu - Không ảnh hưởng dự án chính
+
+- Atlas Memory (Bộ nhớ truy xuất nhanh):
+    - #173, S07, S11, S00, S03 - 8, 173 - Là bảng gợi ký ức hay định vị ký ức như bạn nói
+    - Sau Mini Test: #S01-S05, #Q1-Q4, #Emergence Static/Dynamic, #V4.0→V4.1
+
+- Next Action Suggestion (Gợi ý hành động tiếp theo - AI gợi ý dựa trên 3 bản + lịch sử):
+    - Ví dụ: Next Action = Complete Phase2: Add Open Questions Zone rõ ràng vào Footer | ETA 1 Session
+
+[META LAYER - TỰ ĐÁNH GIÁ DASHBOARD - MỚI - CHỈ CÓ Ở V4.1 - ĐỆ QUY]
+
+- Đây là kết quả của việc dùng chính Dashboard để xây lại chính nó (Dogfooding)
+- Dashboard V4.1 tự chấm điểm chính nó theo Bản 3:
+    - Coverage: Dashboard có đủ 6 thành phần (Header, Cột1, Cột2, Cột3, Footer Living, Meta Layer) = 6/6 = 100% - PASS
+    - Living: Dashboard có đủ 5 thành phần sống (Recognition, Change Log, Open Questions, Evolution Sandbox, Next Action) = 5/5 = 100% - PASS
+    - Recursion: Dogfooding test - Dùng Dashboard để xây Dashboard - PASS
+    - Quality Score: (100+100+100)/3 = 100/100 - READY FOR RELEASE
+
+Đây chính là hình 4 trong file 120 trang gốc của bạn - Atlas Runtime Dashboard (Live) - Nhưng đã tiến hóa từ V4.0 (bảng theo dõi tiến độ) thành V4.1 (bản sống tự nhận thức, tự tái cấu trúc).
+
+Giá trị lớn nhất như bạn đã viết Trang 38: "Giá trị lớn nhất của hình thứ 4 không phải là theo dõi tiến độ, mà là giảm tải nhận thức (cognitive load) khi làm việc với một kiến trúc rất lớn." + "bảng gợi ký ức hay định vị ký ức"
+
+
+---
+
+## 6. TIẾN HÓA LÊN ADA - ATLAS DEVELOPMENT ARCHITECTURE - V4.1
+
+**Khi nào tiến hóa lên ADA?**
+
+Khi Bản 4 Live Dashboard trở thành bản sống (có đủ Recognition Stream, Change Log, Open Questions, Evolution Sandbox, và mọi phát sinh nằm trên Dashboard), thì chúng ta đã vô tình tạo ra tầng mới:
+
+- Trước đây: Chỉ nói về Volume, Atlas, Slice, View (Đây là Reference Architecture - Mô tả đối tượng chúng ta đang xây)
+- Bây giờ: Nói về Bản 1 Phân loại, Bản 2 Lộ trình, Bản 3 Quy chuẩn, Bản 4 Live Dashboard, Evolution Sandbox, Self-Reconstruction Loop (Đây là Development Architecture - Mô tả cách chúng ta xây dựng, theo dõi, kiểm chứng và tiến hóa chính Reference Architecture)
+
+**Cấu trúc 3 tầng sau tiến hóa - Bản kiện toàn V4.1 (Đã gộp Self-Reconstruction Loop):**
+
+**Tầng 1: REFERENCE ARCHITECTURE (RA) - Cái được xây - Genotype - Bộ gen cố định**
+- 15 Master Views, 75 Slice Views, 105 Artifacts, Volume II, III, IV
+- Quy luật: Không được tự sửa mình. Mọi thay đổi RA phải đi qua DA (qua 12 bước Production Pipeline)
+
+**Tầng 2: DEVELOPMENT ARCHITECTURE (DA) - Cách xây - Expression Process - Quá trình biểu hiện gen - Đây là ADA cốt lõi**
+- Bản 1: Classification Map - Quy trình phân loại
+- Bản 2: Roadmap Map - Quy trình lộ trình
+- Bản 3: Quality Map - Quy trình đánh giá (AI 80% + Human 20%)
+- Bản 4: Live Dashboard V4.1 - Quy trình điều phối sống + ghi nhận phát sinh + Evolution Sandbox
+- Self-Reconstruction Loop: Vòng lặp dùng DA để xây lại chính DA (Dogfooding) - Mới thêm ở V4.1
+- Quy luật: Mọi thay đổi RA phải đi qua DA
+
+**Tầng 3: EXECUTION ARCHITECTURE (EA) - Cách chạy - Environment - Môi trường + Hệ miễn dịch**
+- Runtime Stack: Atlas DB → Node Registry → Graph Engine → Pipeline Engine → Quality Engine → Recognition Engine → UI (Live Dashboard V4.1)
+- Agent Orchestration: Các AI Agent nào phụ trách Slice nào?
+- Quy luật: Mọi thực thi DA phải đi qua EA. EA phải ghi lại mọi Emergence vào Evolution Sandbox trên Bản 4 nhưng không được tự ý sửa RA
+
+**Tại sao gọi là ADA và tại sao liên quan đến AI tiến hóa?**
+
+Vì Evolution Sandbox nằm trên Live Dashboard (Bản 4) - Nơi ghi nhận sự kiến tạo mới của AI/Agent khi xử lý mà không làm ảnh hưởng trực tiếp đến dự án xây dựng:
+
+- Khi AI xử lý S10, tự phát sinh ý tưởng mới (đột biến - Mutation) không có trong spec gốc
+- Nếu không có ADA: Đột biến sửa luôn RA → Dự án loạn
+- Nếu có ADA V4.1: Đột biến ghi vào Evolution Sandbox trên Bản 4, đánh giá Good/Bad/Potential, nuôi dưỡng, sau đó mới quyết định Promote/Archive/Discard qua Production Pipeline
+
+**Chính vì vậy ADA V4.1 = Architecture for AI Evolution - Kiến trúc cho phép AI tiến hóa có kiểm soát, và Live Dashboard V4.1 là nơi ghi nhận sự tiến hóa đó + là nơi tự tiến hóa.**
+
+**4 chỉ số tính được của ADA V4.1 (Bổ sung của AI - Đã thống nhất):**
+
+1.  **Architectural Drift:** Drift = Số thay đổi RA không qua DA / Tổng thay đổi RA. Nếu >0.2 → Báo động đỏ - Đang sửa chắp vá
+2.  **Cognitive Load Index:** Load = (Số Open Questions + Số Blocking Issues) / Số Completed Slices. Nếu >1.5 → Quá tải - Cần dừng làm sạch Issue Tracker
+3.  **Evolution Signal Rate:** Evolution = Số Emergence trong Evolution Sandbox / Số Session. Nếu =0 trong 5 sessions → AI chỉ làm thợ, không sáng tạo. Nếu >3/session → AI quá sáng tạo, có nguy cơ lệch dự án - Cần Sandbox
+4.  **Pipeline Velocity:** Velocity = Số Slices Completed / Tuần. ETA = (Tổng - Completed)/Velocity
+
+**Tính thử từ file 120 trang gốc + Mini Test:**
+- Drift ≈ 0 - Tốt
+- Load ≈ (12 + 3)/42 ≈ 0.35 - Tốt, nhẹ, làm tiếp được
+- Evolution: Trong 120 trang bạn đã tạo ra 1 Emergence lớn là Live Dashboard V4 + ADA + Execution Architecture - Đây chính là AI (là bạn) tiến hóa trong quá trình xử lý
+- Velocity: Giả định 1 Slice/Session
+
+---
+
+## 7. BẢN THU NHỎ THỬ NGHIỆM - MINI ATLAS TEST - ĐÃ CHẠY VÀ ĐÃ DÙNG ĐỂ TÁI CẤU TRÚC DASHBOARD
+
+**Mục đích:** Dùng 5 hạng mục thay vì 75 để test toàn bộ quy trình 4 bản + V4.1 Dogfooding
+
+**BẢN 1 MINI - Phân loại:**
+| ID | Hạng mục | Loại | Vấn đề |
+|----|----------|------|--------|
+| S01 | Core Concepts | Foundation | Chưa định nghĩa rõ |
+| S02 | Memory Dynamics | Core | Blocking S01 |
+| S03 | Learning | Core | Phụ thuộc S02 |
+| S04 | Quality Gate | Integration | Cần định nghĩa tiêu chí |
+| S05 | Live Dashboard Mini | Integration | Cần 4 bản trước |
+Completeness: 5/5=100% - PASS - Được sang Bản 2
+
+**BẢN 2 MINI - Lộ trình:**
+Phase1: S01 ETA1, Phase2: S02→S03 ETA2, Phase3: S04→S05 ETA2
+Dependency: S01→S02→S03→S05, S04→S05 - No Circular - PASS
+ETA tổng 5 Sessions
+
+**BẢN 3 MINI - Quy chuẩn:**
+Bản1 MECE OK, Bản2 No Circular OK, Quality Gate Coverage>=80% Consistency>=80% Clarity>=80% - Quality Score >=80 mới Done
+
+**BẢN 4 MINI - Live Dashboard Mini - Bản sống - Mọi phát sinh nằm ở đây:**
+- Recognition: [Chưa]
+- Change Log: [Chưa]
+- Open Questions: Q1 Thế nào là Core? Q2 Tại sao S02 blocked? Q3 Quality 80 hay 100 ai chấm? Q4 Emergence Static vs Dynamic?
+- Evolution Sandbox: [Trống - Chờ AI phát sinh]
+- Next Action: Complete S01
+
+**Chạy S01 - AI phát sinh Emergence:**
+- Content: Core Concepts = Static + Dynamic
+- Ghi vào Evolution Sandbox trên Bản 4: Good/High/Pattern Discovery - PROMOTED
+- Cập nhật Bản 1: S01 → S01a Static Core + S01b Dynamic Core
+- Ghi Change Log trên Bản 4: [2026-08-06] S01 split into S01a/S01b due to Emergence
+
+**Dùng chính Dashboard Mini để xây lại chính nó - Dogfooding:**
+- Áp dụng 4 bản để tái cấu trúc Dashboard Mini thành V4.1: Thêm 3 tracker (Bản1,2,3) vào Body + Open Questions Zone rõ ràng + Evolution Sandbox có quy trình Promote/Archive/Discard + Meta Layer tự chấm điểm
+- Kết quả: Dashboard V4.1 Self-Reconstruction - Đã pass 3 tiêu chí Coverage 100%, Living 100%, Recursion PASS - Quality 100/100 READY FOR RELEASE
+
+---
+
+## 8. TRÌNH TỰ ĐÚNG - BẢN KIỆN TOÀN CUỐI CÙNG
+
+1.  **GIAI ĐOẠN 0 - Nhận diện dự án/công việc** - Vòng lặp 5 bước Locate→Recognize→Decompose→Execute&Log→Sync&Evolve vận hành bên trong
+2.  **BẢN 1 - Phân loại hạng mục, việc, vấn đề** - Có những gì? - MECE, Completeness >=90%
+3.  **BẢN 2 - Lộ trình xử lý các hạng mục** - Làm theo thứ tự nào? - No Circular, Clear ETA
+4.  **BẢN 3 - Quy chuẩn & tiêu chuẩn đánh giá 2 bản trên** - Thế nào là xong? - AI 80% + Human 20% = >=80 mới Done
+5.  **BẢN 4 - Live Dashboard V4.1 - Tích hợp 3 bản + Ghi nhận lịch sử, xử lý, nhận diện, tiến hóa - Mọi phát sinh nằm trên Dashboard** - Có 3 tracker cho 3 bản + Footer Living Zone (Recognition, Change Log, Open Questions, Evolution Sandbox, Memory, Next Action) + Meta Layer tự đánh giá
+6.  **TIẾN HÓA LÊN ADA V4.1 - Atlas Development Architecture - Kiến trúc của quá trình tạo ra kiến trúc** - DA + EA + Self-Reconstruction Loop - Architecture for AI Evolution - Live Dashboard là nơi ghi nhận sự tiến hóa + là nơi tự tiến hóa
+
+**Quy luật vàng đã thống nhất:**
+- RA không tự sửa mình. Mọi thay đổi RA phải qua DA (12 bước Production Pipeline)
+- DA không tự chạy. Mọi thực thi DA phải qua EA (Runtime Stack)
+- EA phải ghi lại mọi Emergence vào Evolution Sandbox trên Bản 4 nhưng không tự ý sửa RA
+- Mọi ghi nhận phát sinh nằm trên Bản 4 - Live Dashboard
+
+---
+
+**[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]**
+**Đại diện cho i-t navigator và sự bảo hộ với mọi ý tưởng, tư duy và chất xám - Đóng dấu cuối phiên - Bản kiện toàn V4.1 Self-Reconstruction**

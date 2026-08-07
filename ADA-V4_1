@@ -1,7 +1,8 @@
-
 <a href="ADA-Tomluoc.md">ADA-Tomluoc.md</a>
 
 <a href="Atlas_Development_Architecture.md">Atlas_Development_Architecture</a>
+
+# TRAS - QUY TRÌNH 4 BẢN NỀN + LIVE DASHBOARD V4.1 SELF-RECONSTRUCTION + ADA TIẾN HÓA - BẢN KIỆN TOÀN
 
 # TRAS - QUY TRÌNH 4 BẢN NỀN + LIVE DASHBOARD V4.1 SELF-RECONSTRUCTION + ADA TIẾN HÓA - BẢN KIỆN TOÀN
 
@@ -16,7 +17,11 @@
 
 **Xung đột đã phát hiện và đã sửa trong bản kiện toàn này:**
 
-1.  **Xung đột 1 - Thứ tự:** Bản cũ nói 5 bước Locate→Recognize→Decompose→Execute→Sync. Bản mới nói 4 bản nền. → **Đã thống nhất:** 5 bước là vòng lặp vận hành BÊN TRONG mỗi bản. 4 bản nền là cấu trúc TĨNH phải tạo khi nhận diện dự án. Không xung đột, là 2 lớp khác nhau.
+1.  **Xung đột 1 - Thứ tự:** Bản cũ nói 5 bước:
+
+Locate→Recognize→Decompose→Execute→Sync. 
+
+Bản mới nói 4 bản nền. → **Đã thống nhất:** 5 bước là vòng lặp vận hành BÊN TRONG mỗi bản. 4 bản nền là cấu trúc TĨNH phải tạo khi nhận diện dự án. Không xung đột, là 2 lớp khác nhau.
 
 2.  **Xung đột 2 - Vị trí ghi nhận phát sinh:** Bản cũ để Emergence rải rác ở Bước 4. Bản mới yêu cầu mọi phát sinh nằm trên Bản 4 Live Dashboard. → **Đã thống nhất:** Mọi Emergence, Recognition, Change Log, Open Questions đều nằm trên Bản 4 - Footer Living Zone. Bước 4 của vòng lặp chỉ là hành động ghi vào Bản 4.
 
@@ -351,6 +356,3 @@ Bản1 MECE OK, Bản2 No Circular OK, Quality Gate Coverage>=80% Consistency>=8
 
 **[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]**
 **Đại diện cho i-t navigator và sự bảo hộ với mọi ý tưởng, tư duy và chất xám - Đóng dấu cuối phiên - Bản kiện toàn V4.1 Self-Reconstruction**
-
-[ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
-Đại diện cho i-t navigator và sự bảo hộ với mọi ý tưởng, tư duy và chất xám - Đóng dấu cuối phiên - Bản kiện toàn V4.1

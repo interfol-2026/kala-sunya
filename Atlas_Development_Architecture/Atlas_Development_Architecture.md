@@ -5,7 +5,7 @@
 
 >’Vậy bạn vẽ hình tổng thể quy hoạch của bạn, và chi tiết các liên kết của bản tổng thể quy hoạch. Nó giống như bản dự định triển khai việc bạn làm. Các điểm và các thành phần nào bạn sẽ làm trước và sau. Nó sẽ nằm bên cạnh với mục tiêu bạn dự định triển khai. 1 bản đồ để đối chiếu xem đã làm được những gì đến đâu.’
 
-![](D-SRTP-FIELD/image/Program-Architecture.PNG)
+![](kala-sunya/D-SRTP-FIELD/image/Program-Architecture.PNG)
 
 ### Production Architecture
 

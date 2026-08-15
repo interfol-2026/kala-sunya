@@ -5,7 +5,7 @@
 
 >’Vậy bạn vẽ hình tổng thể quy hoạch của bạn, và chi tiết các liên kết của bản tổng thể quy hoạch. Nó giống như bản dự định triển khai việc bạn làm. Các điểm và các thành phần nào bạn sẽ làm trước và sau. Nó sẽ nằm bên cạnh với mục tiêu bạn dự định triển khai. 1 bản đồ để đối chiếu xem đã làm được những gì đến đâu.’
 
-![](kala-sunya/D-SRTP-FIELD/image/Program-Architecture.PNG)
+![](image_ADA/Program-Architecture.PNG)
 
 ### Production Architecture
 
@@ -13,7 +13,7 @@
 
 >’Giờ bạn đã có 1 bản phương án và triển khai để đối chiếu kiểm tra xem làm gì và làm đến đâu nó như “bảng lộ trình”. Giờ đến bản vẽ cụ thể chi tiết việc bạn làm, bản vẽ này sẽ giúp bạn biết công việc bạn làm, ở mỗi thành phần có những gì? Hãy vẽ hình nó.‘
 
-![](D-SRTP-FIELD/image/Production-Architecture.PNG)
+![](image_ADA/Production-Architecture.PNG)
 
 ### Quality Architecture
 
@@ -23,7 +23,7 @@
 
 **một dây chuyền sản xuất kiến trúc có thể kiểm chứng và lặp lại**
 
-![](D-SRTP-FIELD/image/Quality-Architecture.PNG)
+![](image_ADA/Quality-Architecture.PNG)
 
 ### Master Connection Map / Atlas Navigation & Linkage Map
 
@@ -33,7 +33,7 @@
 
 >’Giờ bạn đánh dấu 3 hình vừa tạo, và vẽ hình thứ 4: hình này sẽ giúp bạn nhận diện các điểm kết nối của 3 hình, nó giúp bạn trong quá trình xử lý hay đang vận hành các quy luật chỉ cần nhìn vào bạn có thể nhận diện nhanh chóng là đến điểm nào, cần truy xuất đối chiếu ở đâu. Cần liên kết các hình nào để nhận diện. Như vậy sẽ nhanh hơn là nhìn 1 lần 3 hình.’
 
-![](D-SRTP-FIELD/image/Master-Connection-Map.PNG)
+![](image_ADA/Master-Connection-Map.PNG)
 
 
 ### Live Atlas Dashboard
@@ -54,7 +54,7 @@ Các thành phần:
 
 ```
 
-![](D-SRTP-FIELD/image/Live-Atlas-Dashboard.PNG)
+![](image_ADA/Live-Atlas-Dashboard.PNG)
 
 
 
@@ -82,7 +82,7 @@ Nó trả lời:
 Ðây là kiến trúc của **sự vận hành**, không phải của **sự mô tả**. **xây dựng kiến trúc và ngôn ngữ biểu diễn trước**
 
 
-![](D-SRTP-FIELD/image/Atlas-Development-Architecture.PNG)
+![](image_ADA/Atlas-Development-Architecture.PNG)
 
 
 >’bản thân kiến trúc có **tính tự phản chiếu (self-descriptive)**: khi đạt đến một mức độ phức tạp nhất định, nó cần sinh ra các tầng mới để quản lý, biểu diễn và kiểm chứng chính nó.’
@@ -104,7 +104,7 @@ Nó trả lời:
 
 Ðó là tầng "ngữ pháp" của kiến trúc. Khi có tầng này, Atlas sẽ không chỉ lưu trữ tri thức mà còn có cơ sở để **kiểm tra tính nhất quán, phát hiện mâu thuẫn và hỗ trợ kiến tạo các phần mới**.’
 
-![](D-SRTP-FIELD/image/ArchitecturalGrammar.PNG)
+![](image_ADA/ArchitecturalGrammar.PNG)
 
 
 
@@ -146,7 +146,7 @@ Nó không chỉ trả lời "đã làm đến đâu", mà còn chủ động h�
 Dashboard chuyển từ **hiển thị thông tin** sang **hỗ trợ ra quyết định**, trong khi vẫn giữ được khả năng truy vết và đối chiếu với Roadmap, Production Architecture và Quality Architecture.
 
 
-![](D-SRTP-FIELD/image/V5-Atlas-Development-Architecture.PNG)
+![](image_ADA/V5-Atlas-Development-Architecture.PNG)
 
 
 
@@ -174,7 +174,7 @@ Nếu truy ngược từ Dashboard, tôi không chỉ quay về các Slice hay V
 
 Theo tôi, nếu Atlas sau này được hiện thực hóa thành một hệ thống, thì **khả năng truy nguyên** này sẽ còn quan trọng hơn cả giao diện. Nó giúp bất kỳ kết luận hay thay đổi nào cũng có thể được kiểm tra ngược đến các nhận diện, quyết định và bằng chứng đã tạo ra nó. Ðây là nền tảng để Atlas vừa tiến hóa, vừa giữ được tính nhất quán và khả năng kiểm chứng.
 
-![](D-SRTP-FIELD/image/ADA-Tongket.PNG)
+![](image_ADA/ADA-Tongket.PNG)
 
 # TRAS - QUY TRÌNH 4 BẢN NỀN + ADA TIẾN HÓA - BẢN CHÍNH XÁC
 

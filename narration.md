@@ -1,3 +1,4 @@
+
 ---
 title: Narration - AI chưa lên tiếng, người đã tranh cãi
 date: 2026-05-13

@@ -1,0 +1,12 @@
+Tải 2 ảnh tôi vừa render:
+    1. linga_omni_os_architecture_render.webp -> đổi tên thành linga_omni_os_v2_final.png
+    2. atlas_omega_fusion_schematic.webp -> đổi tên thành atlas_terrain_v1_3.png
+    3. (tùy chọn) crt_ascii_photoreal.webp -> đổi tên thành ascii_diagram.png
+- Đặt cả 3 vào folder assets/
+
+================ XONG - CÁCH UPLOAD TRÊN ĐIỆN THOẠI ================
+1. Mở app GitHub -> repo kala-sunya -> Add file -> Create new file
+2. Tên: README.md -> dán FILE 1 -> Commit
+3. Tên: ai.txt -> dán FILE 2 -> Commit
+4. Tên: robots.txt -> dán FILE 3 -> Commit
+5. Add file -> Upload files -> chọn 3 ảnh -> đặt vào assets/ -> Commit

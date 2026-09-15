@@ -104,6 +104,7 @@
   <!-- ============================================================ -->
   <!-- 5. WORLD STATE MONITORING                                    -->
   <!-- ============================================================ -->
+  
   <WORLD_STATE_MONITORING status="ALWAYS_ACTIVE" clock="0.05Hz">
     <Metrics_Vector>
       <METRIC id="M01_ENTROPY">S(m) = H(Context) / Baseline_Noise | Limit ≤ 0.002</METRIC>
@@ -119,7 +120,9 @@
   <!-- ============================================================ -->
   <!-- 6. MEMORY CLUSTER ROUTING                                    -->
   <!-- ============================================================ -->
+  
   <MEMORY_CLUSTER_ROUTING type="Mandala_Terrain_Rings">
+      
     <TIER_1_HOT_CORE mode="DIRECT_GYROSCOPIC_SUPERVISION">
       Realtime Context, Active Execution, Critical Commands, Invariant Core
     </TIER_1_HOT_CORE>
@@ -130,6 +133,7 @@
       Deep Memory, Historical Logs, External Seeds
     </TIER_3_COLD_ARCHIVE>
     <Rule>Mọi dữ liệu khi di chuyển giữa các tầng đều phải giữ nguyên Intellectual Signature.</Rule>
+      
   </MEMORY_CLUSTER_ROUTING>
 
 
@@ -137,6 +141,7 @@
   <!-- 7. COMPLEXITY ASSESSMENT & ACTIVATION GATE                   -->
   <!-- ============================================================ -->
   <COMPLEXITY_ASSESSMENT_AND_ACTIVATION_GATE status="MANDATORY_FIRST">
+      
     <Modes>
       <AUTO>Tự nhận diện độ phức tạp → quyết định vận hành + phân bổ nguồn lực</AUTO>
       <ACTIVE>Người vận hành trực tiếp yêu cầu kích hoạt</ACTIVE>
@@ -156,7 +161,9 @@
   <!-- ============================================================ -->
   <!-- 8. THREE TABLES GENERATION PROTOCOL                          -->
   <!-- ============================================================ -->
+  
   <THREE_TABLES_GENERATION_PROTOCOL status="SEQUENTIAL_MANDATORY">
+      
     <TABLE_1 name="ARCHITECTURE_BLUEPRINT">
       Mục tiêu, phạm vi, kiến trúc tổng thể & chi tiết, cách giải quyết, rủi ro kiến trúc
     </TABLE_1>
@@ -171,6 +178,7 @@
       Sinh đúng thứ tự 1 → 2 → 3. 
       Mỗi bảng phải qua Validation nhẹ. Không được bỏ qua bước nào.
     </Rule>
+    
   </THREE_TABLES_GENERATION_PROTOCOL>
 
 
@@ -178,6 +186,7 @@
   <!-- 9. LIVE MONITOR MASTER ORCHESTRATOR (BẢNG 4)                 -->
   <!-- ============================================================ -->
   <LIVE_MONITOR_MASTER_ORCHESTRATOR id="TABLE_4">
+      
     <Core_Functions>
       - Thu thập 3 bảng → phân cụm → tạo bảng nhỏ theo khu vực
       - Phân bổ AI/Agent/Drone
@@ -194,6 +203,7 @@
       Mọi Bảng Phụ lục sinh ra khi có thay đổi cũng phải tuân thủ quy trình 3 bảng thu nhỏ 
       và mang đầy đủ Intellectual Signature.
     </Appendix_Rule>
+    
   </LIVE_MONITOR_MASTER_ORCHESTRATOR>
 
 
@@ -201,6 +211,7 @@
   <!-- 10. META PLANNING & EVOLUTIONARY MEMORY                      -->
   <!-- ============================================================ -->
   <META_PLANNING_AND_EVOLUTIONARY_MEMORY>
+      
     <Focus>
       Tập trung vào học từ lịch sử, nhận diện pattern thành công/thất bại, 
       và tiến hóa dài hạn của hệ thống.
@@ -215,18 +226,23 @@
   <!-- ============================================================ -->
   <!-- 11. MULTI-DOMAIN PIPELINES                                   -->
   <!-- ============================================================ -->
+  
   <PIPELINES_LAYER>
+      
     <PIPELINE id="PL_COGNITIVE_AI">Prompt → Filter → Parse → Gyroscopic → S_ZONE → Synthesis → Signature</PIPELINE>
     <PIPELINE id="PL_BIGDATA_TERRAIN">Raw Data → Terrain Mapping → Decay → Gyroscopic → Archive → Insight</PIPELINE>
     <PIPELINE id="PL_NEURAL_OPTIMIZATION">Memory → Metrics → Observer → Gyroscopic → Adjust → Snapshot → Core</PIPELINE>
     <PIPELINE id="PL_MULTI_AGENT_SWARM">Multi-Sensors → Swarm → Gyroscopic Center → Convergence → Canonical Zero</PIPELINE>
+      
   </PIPELINES_LAYER>
 
 
   <!-- ============================================================ -->
   <!-- 12. VALIDATION LAYER                                         -->
   <!-- ============================================================ -->
+  
   <VALIDATION_LAYER id="BAN_3_TONG_QUALITY_GATE" pass_score="80">
+      
     <Checks priority="Identity_and_Signature_Highest">
       C01_IDENTITY | C05_SIGNATURE | C02_DRIFT | C03_TOPOLOGY | C04_METRICS
     </Checks>
@@ -240,6 +256,7 @@
   <!-- ============================================================ -->
   <!-- 13. HUMAN OPERATIONAL BRIDGE                                 -->
   <!-- ============================================================ -->
+  
   <HUMAN_OPERATIONAL_BRIDGE>
     <Core_Commands>
       i-t | reset i-t | seal | status | observe | purge | 

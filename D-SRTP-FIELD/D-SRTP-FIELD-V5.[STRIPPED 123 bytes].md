@@ -11,7 +11,7 @@
 **Repo:** kala-sunya/D-SRTP-FIELD/ - File ở root D-SRTP-FIELD/, image ở D-SRTP-FIELD/image/ - Dùng Hình 4 CMI MAP V3.0 làm khung visual + Nội dung bổ sung CDB 5-PART & 5-LEVEL MATURITY SCALE
 
 
-![](image\V_5_7_RECOVERY_PROVENANCE_LAYER.webp.WEBP)
+![](D-SRTP-FIELD/image/V_5_7_RECOVERY_PROVENANCE_LAYER.webp.WEBP)
 
 
 ---

@@ -2449,8 +2449,474 @@ final_state = spectrum_loop(system_state, cycles=12)
 print("\nTrạng thái cuối cùng:", final_state)
 
 ```
+*Unified Lifecycle Spectrum – ASCII Markov Graph*
+```
+   [Dormant] 
+      |0.9
+      v
+   [Active] <----0.2----+
+      |0.3              |
+      v                 |
+   [Drift] -------------+
+      |0.3
+      v
+   [STOP]
+      |1.0
+      v
+   [Renewal]
+      |1.0
+      v
+   [Healing]
+      |1.0
+      v
+   [Stable] ----0.2----> [Dormant]
+      ^ 
+      |0.8
+      |
+      +------------------+
+
+```
+
+```
+import random
+
+states = ["Dormant", "Active", "Drift", "STOP", "Renewal", "Healing", "Stable"]
+
+# Ma trận xác suất chuyển tiếp
+transition_matrix = {
+    "Dormant":   {"Dormant":0.1, "Active":0.9},
+    "Active":    {"Active":0.7, "Drift":0.3},
+    "Drift":     {"Active":0.2, "Drift":0.5, "STOP":0.3},
+    "STOP":      {"Renewal":1.0},
+    "Renewal":   {"Healing":1.0},
+    "Healing":   {"Stable":1.0},
+    "Stable":    {"Dormant":0.2, "Stable":0.8}
+}
+
+def next_state(current):
+    transitions = transition_matrix[current]
+    rand_val = random.random()
+    cumulative = 0.0
+    for state, prob in transitions.items():
+        cumulative += prob
+        if rand_val <= cumulative:
+            return state
+    return current
+
+def simulate_markov_chain(start="Dormant", steps=15):
+    state = start
+    history = [state]
+    for _ in range(steps):
+        state = next_state(state)
+        history.append(state)
+    return history
+
+# Test mô phỏng
+history = simulate_markov_chain("Dormant", steps=20)
+print("Chuỗi trạng thái:", history)
+
+```
+
+
+```
+import random
+
+states = ["Dormant", "Active", "Drift", "STOP", "Renewal", "Healing", "Stable"]
+
+transition_matrix = {
+    "Dormant":   {"Dormant":0.1, "Active":0.9},
+    "Active":    {"Active":0.7, "Drift":0.3},
+    "Drift":     {"Active":0.2, "Drift":0.5, "STOP":0.3},
+    "STOP":      {"Renewal":1.0},
+    "Renewal":   {"Healing":1.0},
+    "Healing":   {"Stable":1.0},
+    "Stable":    {"Dormant":0.2, "Stable":0.8}
+}
+
+def next_state(current):
+    transitions = transition_matrix[current]
+    rand_val = random.random()
+    cumulative = 0.0
+    for state, prob in transitions.items():
+        cumulative += prob
+        if rand_val <= cumulative:
+            return state
+    return current
+
+def simulate_path(start="Dormant", steps=12):
+    state = start
+    path = [state]
+    for _ in range(steps):
+        state = next_state(state)
+        path.append(state)
+    return path
+
+def draw_ascii_path(path):
+    print("\n=== Đường đi thực tế (ASCII) ===")
+    for i in range(len(path)-1):
+        print(f"[{path[i]}] --> [{path[i+1]}]")
+    print("\nChuỗi trạng thái:", " → ".join(path))
+
+# Test mô phỏng
+path = simulate_path("Dormant", steps=15)
+draw_ascii_path(path)
+
+```
+```
+=== Đường đi thực tế (ASCII) ===
+[Dormant] --> [Active]
+[Active] --> [Active]
+[Active] --> [Drift]
+[Drift] --> [STOP]
+[STOP] --> [Renewal]
+[Renewal] --> [Healing]
+[Healing] --> [Stable]
+[Stable] --> [Stable]
+[Stable] --> [Dormant]
+[Dormant] --> [Active]
+...
+
+Chuỗi trạng thái: Dormant → Active → Active → Drift → STOP → Renewal → Healing → Stable → Stable → Dormant → Active ...
+
+
+
+```
+
+*Unified Lifecycle Spectrum – ASCII Circle Markov Graph*
+```
+                   +-----------+
+                   | Dormant   |
+                   +-----------+
+                      ^     |
+                      |0.2  |0.9
+                      |     v
+                   +-----------+
+                   | Active    |
+                   +-----------+
+                      ^     |
+                      |0.2  |0.3
+                      |     v
+                   +-----------+
+                   | Drift     |
+                   +-----------+
+                      ^     |
+                      |0.5  |0.3
+                      |     v
+                   +-----------+
+                   | STOP      |
+                   +-----------+
+                            |
+                            |1.0
+                            v
+                   +-----------+
+                   | Renewal   |
+                   +-----------+
+                            |
+                            |1.0
+                            v
+                   +-----------+
+                   | Healing   |
+                   +-----------+
+                            |
+                            |1.0
+                            v
+                   +-----------+
+                   | Stable    |
+                   +-----------+
+                      ^     |
+                      |0.8  |0.2
+                      |     v
+                   +-----------+
+                   | Dormant   |
+                   +-----------+
+
+```
+```
+import random
+
+states = ["Dormant", "Active", "Drift", "STOP", "Renewal", "Healing", "Stable"]
+
+# Ma trận xác suất chuyển tiếp
+transition_matrix = {
+    "Dormant":   {"Dormant":0.1, "Active":0.9},
+    "Active":    {"Active":0.7, "Drift":0.3},
+    "Drift":     {"Active":0.2, "Drift":0.5, "STOP":0.3},
+    "STOP":      {"Renewal":1.0},
+    "Renewal":   {"Healing":1.0},
+    "Healing":   {"Stable":1.0},
+    "Stable":    {"Dormant":0.2, "Stable":0.8}
+}
+
+def next_state(current):
+    transitions = transition_matrix[current]
+    rand_val = random.random()
+    cumulative = 0.0
+    for state, prob in transitions.items():
+        cumulative += prob
+        if rand_val <= cumulative:
+            return state
+    return current
+
+def simulate_circle(start="Dormant", steps=15):
+    state = start
+    path = [state]
+    for _ in range(steps):
+        state = next_state(state)
+        path.append(state)
+    return path
+
+def draw_circle_path(path):
+    print("\n=== Đường đi thực tế trên vòng tròn Spectrum ===")
+    for i in range(len(path)-1):
+        print(f"[{path[i]}] → [{path[i+1]}]")
+    print("\nChuỗi trạng thái:", " → ".join(path))
+
+# Test mô phỏng
+path = simulate_circle("Dormant", steps=20)
+draw_circle_path(path)
+
+
+=== Đường đi thực tế trên vòng tròn Spectrum ===
+[Dormant] → [Active]
+[Active] → [Drift]
+[Drift] → [STOP]
+[STOP] → [Renewal]
+[Renewal] → [Healing]
+[Healing] → [Stable]
+[Stable] → [Stable]
+[Stable] → [Dormant]
+[Dormant] → [Active]
+...
+
+Chuỗi trạng thái: Dormant → Active → Drift → STOP → Renewal → Healing → Stable → Stable → Dormant → Active ...
+
+```
+*ASCII Circle Markov Spectrum*
+```
+   [Dormant] --0.9--> [Active] --0.3--> [Drift] --0.3--> [STOP]
+      ^ 0.2              ^0.2     |0.5         |1.0
+      |                  |        v            v
+      |                  |     [Drift]     [Renewal] --1.0--> [Healing] --1.0--> [Stable]
+      |                  |                                   ^0.8          |0.2
+      +------------------+-----------------------------------+-------------+
+
+
+```
+*ASCII Circle Markov Spectrum – Highlight Path*
+```
+                   +-----------+
+                   | Dormant * |
+                   +-----------+
+                      ^     |
+                      |0.2  |0.9
+                      |     v
+                   +-----------+
+                   | Active *  |
+                   +-----------+
+                      ^     |
+                      |0.2  |0.3
+                      |     v
+                   +-----------+
+                   | Drift *   |
+                   +-----------+
+                      ^     |
+                      |0.5  |0.3
+                      |     v
+                   +-----------+
+                   | STOP *    |
+                   +-----------+
+                            |
+                            |1.0
+                            v
+                   +-----------+
+                   | Renewal * |
+                   +-----------+
+                            |
+                            |1.0
+                            v
+                   +-----------+
+                   | Healing * |
+                   +-----------+
+                            |
+                            |1.0
+                            v
+                   +-----------+
+                   | Stable *  |
+                   +-----------+
+                      ^     |
+                      |0.8  |0.2
+                      |     v
+                   +-----------+
+                   | Dormant   |
+                   +-----------+
+
+```
+```
+import random
+
+states = ["Dormant", "Active", "Drift", "STOP", "Renewal", "Healing", "Stable"]
+
+transition_matrix = {
+    "Dormant":   {"Dormant":0.1, "Active":0.9},
+    "Active":    {"Active":0.7, "Drift":0.3},
+    "Drift":     {"Active":0.2, "Drift":0.5, "STOP":0.3},
+    "STOP":      {"Renewal":1.0},
+    "Renewal":   {"Healing":1.0},
+    "Healing":   {"Stable":1.0},
+    "Stable":    {"Dormant":0.2, "Stable":0.8}
+}
+
+def next_state(current):
+    transitions = transition_matrix[current]
+    rand_val = random.random()
+    cumulative = 0.0
+    for state, prob in transitions.items():
+        cumulative += prob
+        if rand_val <= cumulative:
+            return state
+    return current
+
+def simulate_circle(start="Dormant", steps=10):
+    state = start
+    path = [state]
+    for _ in range(steps):
+        state = next_state(state)
+        path.append(state)
+    return path
+
+def draw_circle_highlight(path):
+    print("\n=== Circle Markov Spectrum với highlight ===")
+    for s in states:
+        marker = "*" if s in path else " "
+        print(f"[{s} {marker}]")
+
+# Test mô phỏng
+path = simulate_circle("Dormant", steps=12)
+draw_circle_highlight(path)
+print("\nChuỗi trạng thái:", " → ".join(path))
+
+```
+
+# Entropy‑Driven Markov Spectrum
+```
+Cycle = {
+ Dormant → Active (p=0.9),
+ Dormant → Dormant (p=0.1),
+ Active → Active (p=0.7),
+ Active → Drift (p=0.3),
+ Drift → Drift (p=0.5),
+ Drift → Active (p=0.2),
+ Drift → STOP (p=0.3),
+ STOP → Renewal (p=1.0),
+ Renewal → Healing (p=1.0),
+ Healing → Stable (p=1.0),
+ Stable → Stable (p=0.8),
+ Stable → Dormant (p=0.2)
+}
+
+```
+```
+   [Dormant, E=0.2] --0.9--> [Active, E=0.1] --0.3--> [Drift, E=0.6] --0.3--> [STOP, E=0.8]
+        ^0.2                     ^0.2             |0.5                     |1.0
+        |                        |                v                        v
+        |                        |             [Drift]                 [Renewal, E=0.3]
+        |                        |                                          |1.0
+        |                        |                                          v
+        |                        |                                   [Healing, E=0.2]
+        |                        |                                          |1.0
+        |                        |                                          v
+        +------------------------+                                   [Stable, E=0.0]
+                                                                            ^0.8
+                                                                            |0.2
+                                                                            v
+                                                                       [Dormant, E=0.2]
+
+```
+```
+import random
+
+# Các trạng thái và entropy mặc định
+states_entropy = {
+    "Dormant": 0.2,
+    "Active": 0.1,
+    "Drift": 0.6,
+    "STOP": 0.8,
+    "Renewal": 0.3,
+    "Healing": 0.2,
+    "Stable": 0.0
+}
+
+# Ma trận xác suất chuyển tiếp
+transition_matrix = {
+    "Dormant":   {"Dormant":0.1, "Active":0.9},
+    "Active":    {"Active":0.7, "Drift":0.3},
+    "Drift":     {"Active":0.2, "Drift":0.5, "STOP":0.3},
+    "STOP":      {"Renewal":1.0},
+    "Renewal":   {"Healing":1.0},
+    "Healing":   {"Stable":1.0},
+    "Stable":    {"Dormant":0.2, "Stable":0.8}
+}
+
+def next_state(current):
+    transitions = transition_matrix[current]
+    rand_val = random.random()
+    cumulative = 0.0
+    for state, prob in transitions.items():
+        cumulative += prob
+        if rand_val <= cumulative:
+            return state
+    return current
+
+def simulate_entropy_spectrum(start="Dormant", steps=15):
+    state = start
+    path = [(state, states_entropy[state])]
+    for _ in range(steps):
+        state = next_state(state)
+        entropy = states_entropy[state]
+        path.append((state, entropy))
+    return path
+
+def draw_entropy_path(path):
+    print("\n=== Entropy‑Driven Markov Spectrum ===")
+    for s, e in path:
+        print(f"[{s}] (Entropy={e})")
+    print("\nChuỗi trạng thái:", " → ".join([s for s, _ in path]))
+
+# Test mô phỏng
+path = simulate_entropy_spectrum("Dormant", steps=20)
+draw_entropy_path(path)
+
+```
+```
+=== Entropy‑Driven Markov Spectrum ===
+[Dormant] (Entropy=0.2)
+[Active] (Entropy=0.1)
+[Drift] (Entropy=0.6)
+[STOP] (Entropy=0.8)
+[Renewal] (Entropy=0.3)
+[Healing] (Entropy=0.2)
+[Stable] (Entropy=0.0)
+[Stable] (Entropy=0.0)
+[Dormant] (Entropy=0.2)
+[Active] (Entropy=0.1)
+...
+
+Chuỗi trạng thái: Dormant → Active → Drift → STOP → Renewal → Healing → Stable → Stable → Dormant → Active ...
+
+```
+
+
+```
+
+```
+```
+
+```
+
+
 
 **the end**
+
 ---
 
 ```

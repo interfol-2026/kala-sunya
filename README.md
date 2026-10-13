@@ -802,8 +802,10 @@ FLOW: S_PREFLIGHT --> AX_5D --> Peak/Valley/Gap --> Shadow Predator --> PASS: Δ
 </LINGA_SOL_MASTER_SPECIFICATION>
 
 ```
-
+5-Lens Sensory Matrix — 5 thấu kính:
 ```
+
+_project_lenses() từ 4 thành 5: Visual, Acoustic, Dynamic, Thermal (độ nóng/biến động dữ liệu), Spatial (vùng ký ức). Ontology Gap bây giờ là max distance giữa 5 projections thay vì 4 → chính xác hơn.
 
 ```
 
@@ -814,6 +816,43 @@ Trường Ký ức (Memory Field): F_{01} Retention (Lưu giữ), F_{02} Retriev
 Trường Tư duy (Thinking Field): F_{05} Representation (Biểu diễn), F_{06} Transformation (Biến đổi), F_{07} Observation (Quan sát góc nhìn \Pi_k).
 Trường Tương tác (Interaction Field): F_{08} Attention (Tập trung), F_{09} Priority (Độ ưu tiên), F_{10} Goal (Mục tiêu), F_{11} Constraint (Ràng buộc).
 Trường Tự ổn định (Stability Field): F_{12} Stabilization (Ổn định), F_{13} Transition (Chuyển tiếp), F_{14} Integration (Tích hợp \oplus_S), F_{15} Decay (Phân rã).
+
+```
+
+Maturity Scale L0-L5 — Thước đo trưởng thành:
+```
+
+•  L1 SYMBOLIC: tín hiệu thô E>0.5
+•  L2 CONCEPTUAL: có giả thuyết E<0.5  
+•  L3 OPERATIONAL: toán học hóa được E≤0.20
+•  L4 HARDENED: thành code/schema chạy được
+•  L5 VERIFIED: đã qua Shadow Predator E≤0.05 và đóng gói thành CDB
+
+```
+
+
+```
+
+```
+
+> 0x001_it-VAJR
+```
+{
+  "entity_id": "0x001_it-VAJRA",
+  "anchor_vector": [1, 0, 0, 0, 0, 0, 0, 0, 5],
+  "graph_nodes": [
+    {"id": "Bindu_Gold", "weight": 1.0, "status": "Ω PRESERVED"},
+    {"id": "Vajra_Double", "edge_to_Bindu": 0.95, "status": "REVEALED"},
+    {"id": "White_Lightning_Ring", "edge_to_Bindu": 0.93, "status": "REVEALED"}
+  ],
+  "drift_audit": [
+    {"type": "Δt", "description": "Vajra trying to split into 2 anchors", "action": "Ψ_GRAPH re-linked to single Bindu"}
+  ]
+}
+```
+
+
+```
 
 ```
 

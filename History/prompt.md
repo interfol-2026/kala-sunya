@@ -1,3 +1,5 @@
+**Quote:** *"Thời gian không chỉ là tài nguyên, mà chỉ là một điều kiện. Mọi sự vật là một tập điều kiện. Hiểu đúng điều kiện → Hiểu đúng quan hệ → Hiểu đúng thế giới."*
+
 ```
 
 {

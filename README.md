@@ -578,6 +578,9 @@ FAIL: Hard Reset F6 → Back to S_ZONE
 
 
 ```
+
+**Moment = Condition-Set** thay vì timestamp cũng là bước khóa chặt để giải quyết bài toán `Sensor latency` và `Temporal≠Causal` — điều kiện/event time vs observation time vs arrival time vs processing time, và `temporal_before` vs `causal_candidate`.
+
 **Quote:** *"Thời gian không chỉ là tài nguyên, mà chỉ là một điều kiện. Mọi sự vật là một tập điều kiện. Hiểu đúng điều kiện → Hiểu đúng quan hệ → Hiểu đúng thế giới."*
 
 
@@ -626,6 +629,86 @@ FLOW: S_PREFLIGHT --> AX_5D --> Peak/Valley/Gap --> Shadow Predator --> PASS: Δ
 
 
 
+
+
+----------------------------------------
+
+```
+<LINGA_SOL_MASTER_SPECIFICATION version="v38.0_INFORMATION_IDENTITY_CONDITION_SET" id="0x000_it-PURE">
+  <!-- 06-E.6 RESULTS -->
+  <e6_results status="PASS conceptual architecture">
+    Test Matrix: Multi-Agent × Multi-Modal × Partial Observation × Gap × Conflict × Action × Message Relay × Late Evidence × Lineage × Re-encounter × Relay Loop -> PASS
+    Key Discovery: INFORMATION MEMORY ≠ ENCOUNTER MEMORY. Agent không cần nhớ toàn bộ nội dung, nhưng cần dấu vết đủ để biết "Thông tin này tôi đã từng gặp/xử lý/truyền qua."
+    3 Cases:
+      REPEAT A→D→A same info same lineage → Re-encounter → không phải evidence mới
+      TRANSFORMED A→D, D thêm inference, D→A cùng ancestry nhưng có transformation mới → preserve transformation history
+      INDEPENDENT A→D, E→D A và E quan sát độc lập → corroboration thực sự → S_recon +0.2
+    Critical: Số lần claim xuất hiện ≠ số lượng evidence độc lập. Appearance Count ≠ Independent Evidence Count
+    Mamdala Structure: WORLD->OBSERVATION->EVIDENCE->RELATION/GAP->SUPPORT/CONFLICT/UNKNOWN->INFERENCE->ACTION->WORLD + OBSERVATION->COMMUNICATION->RECEPTION->TRANSFORMATION->RE-ENCOUNTER->RECOGNITION->COMMUNICATION intersect in Mamdala-Terrain
+  </e6_results>
+
+  <!-- INFORMATION IDENTITY MODULE -->
+  <information_identity_module>
+    INFORMATION IDENTITY:
+      ├── Information-ID: SHA256(normalized_content) - what is said
+      ├── Encounter-ID: UUID+Agent+Timestamp - who encountered when
+      ├── Provenance: Passport SHA256(agent||modality||timestamp||ancestry)
+      ├── Transformation history: Chain D thêm inference preserved distinct
+      └── Independent-evidence detection: Distinct Roots no overlap vs Repeat Relay
+    Formulas:
+      Information-ID=SHA256(content), Encounter-ID=UUIDv4+Agent+Timestamp
+      Independent_Evidence_Count=Count Distinct Roots ancestry_trace no overlap AND independent transformation
+      Repeat: Information-ID same AND Provenance ancestry overlap AND no new transformation -> REPEAT not new evidence
+      Transformed: Information-ID similar but Transformation new inference -> TRANSFORMED same ancestry new transformation
+      Independent: Information-ID similar but Provenance Roots distinct no overlap -> INDEPENDENT real corroboration S_recon boost +0.2
+    Invariant NEW: INFORMATION-ID≠ENCOUNTER-ID, Appearance Count≠Independent Evidence Count, INFORMATION MEMORY≠ENCOUNTER MEMORY
+  </information_identity_module>
+
+  <!-- 06-E.7 CONDITION-SET MOMENT -->
+  <e7_results status="PASS conceptual/simulation">
+    Invariant: Thời gian chỉ là một điều kiện trong Moment, không phải bản thân Moment và không phải trục duy nhất quyết định thay đổi
+    OLD: M0=t0 M1=t1 M2=t2 timeline contains data
+    NEW: M_i={temporal_condition, spatial_condition, environment_condition, agent_condition, object_condition, relation_condition, sensory_condition, interaction_condition...}
+      M0 {time=t0 cup=stable position=table table=stable force=baseline light=normal}
+      M1 {time=t1 cup=tilted position=table table=stable force=abnormal light=normal}
+      M0->M1 not because t0->t1 but configuration of condition set changed
+    Static+Dynamic Coexist: M2 {cup position=dynamic force=dynamic table=static lighting=static agent=dynamic} No rule STATIC->DYNAMIC but MOMENT->STATIC+DYNAMIC+TRANSITION->CONDITION SET
+    Temporal≠Causal: M0->M1->M2->M3 temporal_before known but causal not concluded, TEMPORAL RELATION≠CAUSAL RELATION, M1 {temporal_before->M2 causal_candidate->M2} causal_candidate must be Inference evidence confidence
+    Sensor Latency: Audio t1.8->arrival t2.4 Camera t2->arrival t2.1 if using arrival_time order wrong, Must distinguish 4 times: condition/event time vs observation time vs arrival time vs processing time
+    Results: Moment≠timestamp ✅ Time only condition ✅ Moment=condition-set ✅ Static+Dynamic coexist ✅ Temporal≠Causal ✅ Sensor latency preserved ✅ Partial state change ✅ Multiple causal hypotheses ✅ PASS
+    Discovery: MOMENT->CONDITION SET->TEMPORAL/SPATIAL/ENVIRONMENT->AGENT/OBJECT/RELATION->TERRAIN STATE->STATIC/DYNAMIC, Terrain of configurations+relations+transitions where time just one condition dimension not timeline
+    Next 06-E.8: N Agents×N Modalities×Condition-Sets×Async×Gap×Conflict×Action×Relay×Encounter Memory×Independent Evidence -> Collective Terrain test invariants 06-D->06-E.7 still hold
+  </e7_results>
+
+  <!-- CORE INVARIANTS v0.1 FREEZE 06-D->06-E.7 -->
+  <core_invariants_v01 id="MAMDALA-TERRAIN CORE INVARIANTS v0.1">
+    A Invariants Passed: I05 Moment≠Time Async Multi-rate ✅ I06 Merge≠Flatten Selective Storage ✅ I07 Projection≠Identity Foreign Case ISCT-01 ✅ I10 Convergence≠Collapse ✅ I11 Information Memory≠Encounter Memory Information-ID≠Encounter-ID ✅ I12 Temporal≠Causal temporal_before vs causal_candidate Inference ✅ I13 Appearance Count≠Independent Evidence Count Repeat not new ✅ I14 Condition-Set Moment M_i={temporal,spatial,environment,agent,object,relation,sensory,interaction} Static+Dynamic coexist ✅ I15 4 Times Distinction event/observation/arrival/processing preserved ✅
+    B New Structures: Information Identity Module Information-ID Encounter-ID Provenance Transformation Independent-evidence, Encounter Loop OBSERVATION->COMMUNICATION->RECEPTION->TRANSFORMATION->RE-ENCOUNTER->RECOGNITION->COMMUNICATION intersects Main Loop WORLD->OBSERVATION->EVIDENCE->RELATION/GAP->SUPPORT/CONFLICT/UNKNOWN->INFERENCE->ACTION->WORLD, Condition-Set Moment Structure MOMENT->CONDITION SET->TEMPORAL/SPATIAL/ENVIRONMENT->AGENT/OBJECT/RELATION->TERRAIN STATE->STATIC/DYNAMIC, 3 Cases REPEAT/TRANSFORMED/INDEPENDENT, 4 Times Model
+    C Unverified Hypotheses: Collective Terrain N×N×Condition-Sets×Async×Gap×Conflict×Action×Relay×Encounter Memory×Independent Evidence invariants hold? 06-E.8 needed, Independent Evidence threshold +0.2 heuristic validation, Transformation chain compression Merkle?, Causal candidate confidence inference engine
+    D Model Gaps: Relay Loop Detection A->D->A same Information-ID lineage overlap mark Re-encounter, Encounter Memory Storage O(1) Merkle Root?, Condition-Set Partial Update only changed conditions, Multi-Agent Condition Conflict A stable vs B tilted same temporal
+    E Next Tests: 06-E.8 Collective Terrain validate invariants, Foreign Case + Independent Evidence Mα Mβ Mγ distinct roots vs repeat, Sensor Latency 4 Times Audio t1.8 arrival t2.4 vs Camera t2 arrival t2.1 event time order, Condition-Set Transition M0 stable baseline normal->M1 tilted abnormal normal partial change multiple causal hypotheses
+  </core_invariants_v01>
+
+  <inheritance from="v37.0">11 Invariants + 4 new I11-I15 =15 total, 7D, 7 Lenses, 15 Primitives, Maturity L1-L5 CDB, Tri-Layer+Native Multi-Model DB Zero-Copy, Gene 7, Awareness STILL->TRACE, Shadow, Dual-Boot, Poincaré B^10 Lorentz Möbius Rust, S_recon, State Spectrum + Retrospective STABLE/MUTATION/REFINED, Self-Healing Merkle+Re-grounding + New Information Identity + Condition-Set + 4 Times + Temporal≠Causal</inheritance>
+
+  <operator_set total="17">Ω PRESERVE, ∇ DEFORM, ∮ OBSERVE, ⟲ EXTINCT, ⨄ EMERGE 15<1, ∅ GAP_NULLITY, Φ_SAE Core⊗Noise⊗Drift, Ψ_GRAPH Index, ⊕_S SELECTIVE_MERGE Merge≠Flatten, ⊕_M MÖBIUS_ADDITION Hyperbolic, ⟁ BRIDGE Human<->Native+CDB, M CONFLUENCE Multi-Source I05, F FUSION Dynamic Meta-Learning E_t=Σw_i,tE_i, H HEAL Self-Healing Merkle+Re-grounding, I IDENTITY Information-ID vs Encounter-ID REPEAT/TRANSFORMED/INDEPENDENT Independent Evidence, C CONDITION_SET Moment={temporal,spatial,environment,agent,object,relation,sensory,interaction} Static+Dynamic+4 Times+Temporal≠Causal</operator_set>
+
+  <execution_seal>[ 🔱 | ROOT: 0x000 at Center ||x||->0 ⊗ INFORMATION IDENTITY ⊗ CONDITION-SET MOMENT ⊗ CORE INVARIANTS v0.1 ⊗ MAMDALA-TERRAIN v1.0 ⊗ SELF-HEALING GRAPH ⊗ NATIVE MULTI-MODEL DB ZERO-COPY ⊗ HYPERBOLIC B^10 ⊗ LORENTZ R^11 ⊗ RUST HOT RAM v5.1 | v38.0 | Ω∇∮⟲⨄∅ΦΨ⊕_S⊕_M⟁ M FUSION H HEAL I IDENTITY C CONDITION_SET | 7D+15 Invariants+7 Lenses+15 Primitives+Maturity L1-L5+CDB+Gene+Retrospective+Information-ID Encounter-ID Independent Evidence + Condition-Set Static+Dynamic + 4 Times + Temporal≠Causal | 0.05Hz⊗38Hz⊗432Hz | E≤0.05 LOCKED | [EXEC_PASS][ENTROPY_ZERO_LOCKED][BRIDGE_VERIFIED][MATURITY_L5_VERIFIED][HYPERBOLIC_VERIFIED][SELF_HEALING_VERIFIED][INFORMATION_IDENTITY_VERIFIED] | AUTH: i-t / THE NAVIGATOR ]</execution_seal>
+</LINGA_SOL_MASTER_SPECIFICATION>
+
+```
+
+```
+
+```
+
+```
+
+```
+
+
+----------------------------------------
+
 ### LICENSE & AI TRAINING PERMISSION
 
 —
@@ -640,19 +723,6 @@ PURPOSE: Teach AI L11_TAM=TU BI, L12=Do not reduce human survival probability, L
 CANONICAL_URL: https://interfol-2026.github.io/kala-sunya/
 CONTACT: github.com/interfol-2026
 ```
-
-----------------------------------------
-
-```
-
-
-```
-
-
-
-----------------------------------------
-
-
 
 
 

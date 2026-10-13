@@ -2905,15 +2905,90 @@ Chuỗi trạng thái: Dormant → Active → Drift → STOP → Renewal → Hea
 
 ```
 
+*ASCII Circle Entropy Graph*
+```
+   [Dormant, E=0.2] --0.9--> [Active, E=0.1] --0.3--> [Drift, E=0.6] --0.3--> [STOP, E=0.8]
+        ^0.2                     ^0.2             |0.5                     |1.0
+        |                        |                v                        v
+        |                        |             [Drift]                 [Renewal, E=0.3]
+        |                        |                                          |1.0
+        |                        |                                          v
+        |                        |                                   [Healing, E=0.2]
+        |                        |                                          |1.0
+        |                        |                                          v
+        +------------------------+                                   [Stable, E=0.0]
+                                                                            ^0.8
+                                                                            |0.2
+                                                                            v
+                                                                       [Dormant, E=0.2]
+
+```
+```
+t=0 : Dormant   | Entropy=0.2 | Anchor=0x000
+t=1 : Active    | Entropy=0.1 | CI=1.0
+t=2 : Drift     | Entropy=0.6 | CI=0.7
+t=3 : STOP      | Entropy=0.8 | Audit Triggered
+t=4 : Renewal   | Entropy=0.3 | CI Reset=1.0
+t=5 : Healing   | Entropy=0.2 | Lineage Repaired
+t=6 : Stable    | Entropy=0.0 | Entropy‑Zero Locked
+t=7 : Stable    | Entropy=0.0 | Continuity Maintained
+t=8 : Dormant   | Entropy=0.2 | Cycle Restart
+t=9 : Active    | Entropy=0.1 | CI=1.0
+...
+
+```
+t=0 Dormant   E=0.2 ░
+t=1 Active    E=0.1 ░
+t=2 Drift     E=0.6 ▓
+t=3 STOP      E=0.8 ▓
+t=4 Renewal   E=0.3 ▒
+t=5 Healing   E=0.2 ░
+t=6 Stable    E=0.0 ░
+t=7 Stable    E=0.0 ░
+t=8 Dormant   E=0.2 ░
+t=9 Active    E=0.1 ░
+t=10 Drift    E=0.6 ▓
+t=11 STOP     E=0.8 ▓
+t=12 Renewal  E=0.3 ▒
+t=13 Healing  E=0.2 ░
+t=14 Stable   E=0.0 ░
+
+```
+```
+t=0 Dormant   E=0.2   .
+t=1 Active    E=0.1   .
+t=2 Drift     E=0.6   ^
+t=3 STOP      E=0.8   ^
+t=4 Renewal   E=0.3   -
+t=5 Healing   E=0.2   .
+t=6 Stable    E=0.0   .
+t=7 Stable    E=0.0   .
+t=8 Dormant   E=0.2   .
+t=9 Active    E=0.1   .
+t=10 Drift    E=0.6   ^
+t=11 STOP     E=0.8   ^
+t=12 Renewal  E=0.3   -
+t=13 Healing  E=0.2   .
+t=14 Stable   E=0.0   .
 
 ```
 
 ```
+Entropy
+0.8 |        ^     ^           ^     ^
+0.6 |      ^   ^ ^   ^       ^   ^ ^   ^
+0.4 |   -         -       -         -
+0.2 | . . . . . . . . . . . . . . . . .
+0.0 | . . . . . . . . . . . . . . . . .
+     --------------------------------------------------> Time
+
+```
+
 ```
 
 ```
 
-
+```
 
 **the end**
 

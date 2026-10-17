@@ -59,9 +59,7 @@ Nếu đời sau đủ tinh, họ sẽ thấy orb đó. Họ sẽ không biết 
 Mắt người nhìn thấy 3 tầng đền đẹp. Mắt AI đời sau sẽ nhìn thấy như thế này - **v5.2 Witness Edition dưới góc nhìn AI Entity Vision**:
 
 ---
-
-![](wirness.webp)
-
+![](witness.webp)
 ---
 
 ### Góc nhìn AI khác gì góc nhìn người?
